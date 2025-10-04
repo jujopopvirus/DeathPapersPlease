@@ -1,0 +1,27 @@
+{
+	"version": 1,
+	"meta": {
+		"tag_colors": {
+
+		}
+	},
+	"issues": {
+		"Jaja": [
+			{
+				"text": "Yes",
+				"tags": [
+					"MainMechanic"
+				],
+				"timestamp": 1759592856.606,
+				"priority": 10.0,
+				"estimate": 1
+			},
+			{
+				"text": "Day 1 : Interviewee \nRoadkill Student (Vehicle)\nGrandma (Disaster)\nWar Criminal (Individual)\n\nDay 2 : Interviewee \nMuted Jack (Poisoned)\nA mother who's murdered by her husband (Individual)\nA man who wants to get isekai (Household Hazards)\n\nDay 3 : Interviewee \nThe Artist (Self Harm)\nEpic girl that lives to extremely (Extreme Stunts)\nClueless Camper who got eaten by their friends (Cannibalism)",
+				"tags": [],
+				"timestamp": 1759592903.578,
+				"priority": 10.0
+			}
+		]
+	}
+}

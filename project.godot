@@ -31,7 +31,7 @@ script/search_in_file_extensions=PackedStringArray("gd", "gdshader", "dlg")
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Theatre/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/jamcountdown/plugin.cfg")
+enabled=PackedStringArray("res://addons/Theatre/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/sticky_scribe/plugin.cfg")
 
 [input]
 
