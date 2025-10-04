@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://yy1plsvcrj62"]
+[gd_scene load_steps=2 format=3 uid="uid://yy1plsvcrj62"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" uid="uid://e2fgfsoei5en" path="res://content/script/characterclasses/char_class.gd" id="1_wttlv"]
+
+[node name="Character_Information" type="Node"]
+script = ExtResource("1_wttlv")
+char_name = "Paola Mendoza"
+metadata/_custom_type_script = "uid://e2fgfsoei5en"

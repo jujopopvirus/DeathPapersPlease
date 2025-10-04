@@ -1,17 +1,18 @@
 extends Node
-class_name Character_Information
+class_name Character_Information #library 
 
 
-enum COD_ENUM {
-	HHH,
+enum COD_ENUM { #Enumerator 
+	HOUSEHOLDHAZARD,
 	VEHICLE,
 	STUNTS,
 	SELFHARM,
-	CANNI,
-	MURDR,
+	CANNIBALISM,
+	MURDER,
 	POISON,
 	DISEASE,
-	WILDANMLS
+	WILDANMLS,
+	DISASTER
 }
 
 @export var char_name : String

@@ -1,5 +1,5 @@
 {
-	"version": 1,
+	"version": 1.0,
 	"meta": {
 		"tag_colors": {
 
@@ -14,10 +14,10 @@
 				],
 				"timestamp": 1759592856.606,
 				"priority": 10.0,
-				"estimate": 1
+				"estimate": 1.0
 			},
 			{
-				"text": "Day 1 : Interviewee \nRoadkill Student (Vehicle)\nGrandma (Disaster)\nWar Criminal (Individual)\n\nDay 2 : Interviewee \nMuted Jack (Poisoned)\nA mother who's murdered by her husband (Individual)\nA man who wants to get isekai (Household Hazards)\n\nDay 3 : Interviewee \nThe Artist (Self Harm)\nEpic girl that lives to extremely (Extreme Stunts)\nClueless Camper who got eaten by their friends (Cannibalism)",
+				"text": "Day 1 : Interviewee \nRoadkill Student (Vehicle)\nGrandmaNADO (Disaster)\nAggresive Monke kill it's Owner (Animal)\n\nDay 2 : Interviewee \nMuted Jack (Poisoned)\nA mother who's murdered by her husband (Murder)\nA man whose a big fan of isekai (HOUSEHOLD HAZARD)\n\nDay 3 : Interviewee \nThe Artist (Self Harm)\nEpic girl that lives to extremely (Extreme Stunts)\nClueless Lost Camper who got eaten by their friends (Cannibalism)",
 				"tags": [],
 				"timestamp": 1759592903.578,
 				"priority": 10.0
