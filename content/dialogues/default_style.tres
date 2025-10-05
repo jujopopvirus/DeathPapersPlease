@@ -37,6 +37,8 @@ scene = ExtResource("5_opeyg")
 script = ExtResource("2_7td7s")
 scene = ExtResource("6_ytf5t")
 overrides = {
+"box_animation_in": "0",
+"box_animation_out": "0",
 "box_margin_bottom": "-5.0",
 "box_size": "Vector2(1280, 150)",
 "name_label_alignment": "1",
