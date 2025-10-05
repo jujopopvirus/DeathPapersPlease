@@ -9,5 +9,5 @@ label Go back
 	- Im demanding you
 		character1: Wow so fiesty
 	[wait time="1.0"]
-	jump Go back
+	jump Character1/
 [history action="resume"]

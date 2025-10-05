@@ -1,6 +1,7 @@
 [wait time="2.0"]
 (Intro Dialogue)
 [wait time="1.0"]
+label Go Back
 - Can you show me your ID?
 	Aldrich: Shows ID
 - How did you die?
@@ -9,3 +10,4 @@
 	Aldrich: I don't know
 - What's occupation?
 	Aldrich: Student
+jump AldrichTestDialogues/Go Back
