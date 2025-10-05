@@ -16,7 +16,7 @@
 script = ExtResource("2_7td7s")
 scene = ExtResource("1_gshv6")
 overrides = {
-"global_bg_color": "Color(0, 0, 0, 1)",
+"global_bg_color": "Color(0.023529412, 0, 0.011764706, 1)",
 "global_font": "\"res://content/assets/font/apple/AppleGaramond.ttf\"",
 "global_font_size": "26.0"
 }
@@ -40,6 +40,7 @@ overrides = {
 "box_margin_bottom": "-5.0",
 "box_size": "Vector2(1280, 150)",
 "name_label_alignment": "1",
+"name_label_box_modulate": "Color(0.023529412, 0, 0.011764706, 1)",
 "name_label_box_offset": "Vector2(0, -10)",
 "name_label_custom_font_size": "45.0",
 "name_label_font": "\"res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf\"",

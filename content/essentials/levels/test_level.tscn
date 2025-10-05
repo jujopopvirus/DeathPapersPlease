@@ -1,32 +1,142 @@
-[gd_scene load_steps=5 format=3 uid="uid://csnwq2mcatr0"]
+[gd_scene load_steps=9 format=3 uid="uid://csnwq2mcatr0"]
 
 [ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_pvyka"]
 [ext_resource type="Texture2D" uid="uid://kv08k7uptybd" path="res://content/assets/texture/background/DraftBackground.jpg" id="2_xc47r"]
 [ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="3_2w77h"]
-[ext_resource type="Texture2D" uid="uid://cioy70kvahq4k" path="res://content/assets/texture/background/Desk.png" id="7_1bxpk"]
+[ext_resource type="Script" uid="uid://dbmux4ayes67o" path="res://content/script/cameraanimation.gd" id="4_pda3r"]
+[ext_resource type="Texture2D" uid="uid://casp1xv46fd6l" path="res://content/assets/texture/background/Letterbox.png" id="5_pda3r"]
+
+[sub_resource type="Animation" id="Animation_2w77h"]
+resource_name = "LetterboxCamein"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.6999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Letterbox:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4333333, 3.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.835, 1.115), Vector2(0.835, 0.835)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Letterbox:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4333333, 3.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letterbox:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.4433333, 1.9333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pda3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Letterbox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.365, 1.365)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Letterbox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letterbox:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xc47r"]
+_data = {
+&"LetterboxCamein": SubResource("Animation_2w77h"),
+&"RESET": SubResource("Animation_pda3r")
+}
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_pvyka")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Interviewee_Placeholder" parent="." instance=ExtResource("3_2w77h")]
+position = Vector2(656, 423)
 
-[node name="Background" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background"]
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_xc47r")
 centered = false
 
-[node name="Interviewee_Placeholder" parent="CanvasLayer" instance=ExtResource("3_2w77h")]
+[node name="CameraNode" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+script = ExtResource("4_pda3r")
 
-[node name="Desk" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(641, 362)
-texture = ExtResource("7_1bxpk")
-metadata/_edit_lock_ = true
+[node name="animation" type="AnimationPlayer" parent="CameraNode"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_xc47r")
+}
+autoplay = "RESET"
+speed_scale = 5.0
+
+[node name="Letterbox" type="Sprite2D" parent="CameraNode"]
+scale = Vector2(1.365, 1.365)
+texture = ExtResource("5_pda3r")
