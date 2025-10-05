@@ -21,12 +21,19 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
-layout/style_directory={}
+directories/dch_directory={
+"Aldrich": "res://content/dialogues/characters/testchar/Aldrich.dch"
+}
+directories/dtl_directory={
+"test_timeline": "res://content/dialogues/characters/testchar/test_timeline.dtl"
+}
+layout/style_directory={
+"": "res://content/dialogues/default_style.tres",
+"default_style": "res://content/dialogues/default_style.tres"
+}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://content/dialogues/default_style.tres"]
+layout/default_style="res://content/dialogues/default_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
