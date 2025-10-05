@@ -1,5 +1,5 @@
 extends Node
-class_name Character_Information #library 
+class_name Character_Information_Resource #library 
 
 
 enum COD_ENUM { #Enumerator 
@@ -15,7 +15,13 @@ enum COD_ENUM { #Enumerator
 	DISASTER
 }
 
-@export var char_name : String
-@export var COD : COD_ENUM
+enum TOD_ENUM {
+	Morning,
+	Afternoon,
+	Night
+}
 
-@export var texture_id : Texture2D
+@export var character_name : String
+@export var cause_of_death : COD_ENUM
+@export var character_id : Texture2D
+@export var time_of_death :TOD_ENUM

@@ -25,7 +25,7 @@ directories/dch_directory={
 "Aldrich": "res://content/dialogues/characters/testchar/Aldrich.dch"
 }
 directories/dtl_directory={
-"test_timeline": "res://content/dialogues/characters/testchar/test_timeline.dtl"
+"AldrichTestDialogues": "res://content/dialogues/characters/testchar/AldrichTestDialogues.dtl"
 }
 layout/style_directory={
 "": "res://content/dialogues/default_style.tres",
