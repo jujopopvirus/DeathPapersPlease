@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_pvyka"]
 [ext_resource type="Texture2D" uid="uid://kv08k7uptybd" path="res://content/assets/texture/background/DraftBackground.jpg" id="2_xc47r"]
 [ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="3_2w77h"]
-[ext_resource type="Script" uid="uid://dbmux4ayes67o" path="res://content/script/cameraanimation.gd" id="4_pda3r"]
+[ext_resource type="Script" path="res://content/script/cameraanimation.gd" id="4_pda3r"]
 [ext_resource type="Texture2D" uid="uid://casp1xv46fd6l" path="res://content/assets/texture/background/Letterbox.png" id="5_pda3r"]
 
 [sub_resource type="Animation" id="Animation_2w77h"]
@@ -210,6 +210,7 @@ script = ExtResource("1_pvyka")
 
 [node name="Interviewee_Placeholder" parent="." instance=ExtResource("3_2w77h")]
 position = Vector2(656, 405)
+Dialogue_Timeline = "Ferdinand"
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_xc47r")
@@ -230,3 +231,10 @@ speed_scale = 1.5
 [node name="Letterbox" type="Sprite2D" parent="CameraNode"]
 scale = Vector2(1.365, 1.68)
 texture = ExtResource("5_pda3r")
+
+[node name="Button" type="Button" parent="."]
+z_index = 2
+offset_left = 318.0
+offset_top = 576.0
+offset_right = 952.0
+offset_bottom = 696.0

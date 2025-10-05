@@ -19,17 +19,20 @@ config/icon="uid://dmr6340p6l0s3"
 
 Theatre="*res://addons/Theatre/classes/Theatre.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-Shaker="*res://addons/shaker/src/Shaker.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Aldrich": "res://content/dialogues/characters/testchar/Aldrich.dch",
+"Charlie": "res://content/dialogues/characters/Charlie/Charlie.dch",
+"Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dch",
+"character": "res://content/dialogues/characters/Ferdinand/character.dch",
 "character1": "res://content/dialogues/characters/Character1/character1.dch"
 }
 directories/dtl_directory={
 "AldrichTestDialogues": "res://content/dialogues/characters/testchar/AldrichTestDialogues.dtl",
-"Character1": "res://content/dialogues/characters/Character1/Character1.dtl"
+"Character1": "res://content/dialogues/characters/Character1/Character1.dtl",
+"Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dtl"
 }
 layout/style_directory={
 "": "res://content/dialogues/default_style.tres",
