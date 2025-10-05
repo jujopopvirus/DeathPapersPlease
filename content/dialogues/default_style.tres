@@ -15,6 +15,11 @@
 [sub_resource type="Resource" id="Resource_ltave"]
 script = ExtResource("2_7td7s")
 scene = ExtResource("1_gshv6")
+overrides = {
+"global_bg_color": "Color(0, 0, 0, 1)",
+"global_font": "\"res://content/assets/font/apple/AppleGaramond.ttf\"",
+"global_font_size": "25.0"
+}
 
 [sub_resource type="Resource" id="Resource_e7om8"]
 script = ExtResource("2_7td7s")
@@ -31,14 +36,38 @@ scene = ExtResource("5_opeyg")
 [sub_resource type="Resource" id="Resource_kfkv7"]
 script = ExtResource("2_7td7s")
 scene = ExtResource("6_ytf5t")
+overrides = {
+"box_animation_in": "0",
+"box_animation_new_text": "1",
+"box_animation_out": "0",
+"box_margin_bottom": "-5.0",
+"box_size": "Vector2(1280, 200)",
+"name_label_alignment": "1",
+"name_label_box_offset": "Vector2(0, 10)",
+"name_label_custom_font_size": "32.0",
+"name_label_font": "\"res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf\"",
+"name_label_use_global_font": "false",
+"name_label_use_global_font_size": "false",
+"text_alignment": "1",
+"text_size": "16.0"
+}
 
 [sub_resource type="Resource" id="Resource_b387l"]
 script = ExtResource("2_7td7s")
 scene = ExtResource("7_taalh")
+overrides = {
+"box_width": "400.0",
+"extra_alignment": "1",
+"text_alignment": "1",
+"title_alignment": "1"
+}
 
 [sub_resource type="Resource" id="Resource_321cb"]
 script = ExtResource("2_7td7s")
 scene = ExtResource("8_6j1te")
+overrides = {
+"font_size_custom": "18.0"
+}
 
 [sub_resource type="Resource" id="Resource_64uuk"]
 script = ExtResource("2_7td7s")

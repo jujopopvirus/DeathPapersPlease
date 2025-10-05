@@ -69,6 +69,11 @@ audio/channel_defaults={
 }
 }
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [editor]
 
 script/search_in_file_extensions=PackedStringArray("gd", "gdshader", "dlg")
