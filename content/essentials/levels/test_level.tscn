@@ -1,69 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://csnwq2mcatr0"]
+[gd_scene load_steps=5 format=3 uid="uid://csnwq2mcatr0"]
 
 [ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_pvyka"]
-[ext_resource type="Script" uid="uid://cih5quwns1it1" path="res://content/script/characterclasses/interviewee_placeholder.gd" id="2_usd7p"]
 [ext_resource type="Texture2D" uid="uid://kv08k7uptybd" path="res://content/assets/texture/background/DraftBackground.jpg" id="2_xc47r"]
-[ext_resource type="Shader" uid="uid://b7tuhnsrsnlv" path="res://content/assets/shaders/outline.gdshader" id="3_2w77h"]
-[ext_resource type="Texture2D" uid="uid://cbj6khh12b4p6" path="res://content/assets/texture/chars/test/CharliePlaceholder.png" id="3_pda3r"]
-[ext_resource type="Texture2D" uid="uid://dyfj2cmiygkq6" path="res://content/assets/texture/chars/test/Aldrussy.png" id="3_usd7p"]
+[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="3_2w77h"]
 [ext_resource type="Texture2D" uid="uid://cioy70kvahq4k" path="res://content/assets/texture/background/Desk.png" id="7_1bxpk"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt3ei"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usd7p"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w77h"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pda3r"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xc47r"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pda3r"]
-shader = ExtResource("3_2w77h")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 1
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="Animation" id="Animation_pda3r"]
-resource_name = "breathing"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%Texture_Body:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.4666667, 4.9666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.52), Vector2(0.5, 0.5)]
-}
-
-[sub_resource type="Animation" id="Animation_xc47r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%Texture_Body:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.5, 0.5)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bxpk"]
-_data = {
-&"RESET": SubResource("Animation_xc47r"),
-&"breathing": SubResource("Animation_pda3r")
-}
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_pvyka")
@@ -77,57 +17,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background"]
 texture = ExtResource("2_xc47r")
 centered = false
 
-[node name="Interviewee_Placeholder" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 161.0
-offset_right = -147.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("2_usd7p")
-Dialogue_Timeline = "AldrichTestDialogues"
-Texture_Arrays = Array[Texture2D]([ExtResource("3_pda3r"), ExtResource("3_usd7p")])
-
-[node name="Character_Button" type="Button" parent="CanvasLayer/Interviewee_Placeholder"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 258.0
-offset_right = -259.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vt3ei")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_usd7p")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_2w77h")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_pda3r")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xc47r")
-
-[node name="Texture_Body" type="Sprite2D" parent="CanvasLayer/Interviewee_Placeholder"]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_pda3r")
-position = Vector2(483, 410)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_pda3r")
-
-[node name="TextureAnimation" type="AnimationPlayer" parent="CanvasLayer/Interviewee_Placeholder"]
-libraries = {
-&"": SubResource("AnimationLibrary_1bxpk")
-}
-autoplay = "breathing"
+[node name="Interviewee_Placeholder" parent="CanvasLayer" instance=ExtResource("3_2w77h")]
 
 [node name="Desk" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(641, 362)
 texture = ExtResource("7_1bxpk")
 metadata/_edit_lock_ = true
-
-[connection signal="pressed" from="CanvasLayer/Interviewee_Placeholder/Character_Button" to="CanvasLayer/Interviewee_Placeholder" method="_on_character_button_pressed"]

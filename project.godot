@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="DeathPapersPlease"
+run/main_scene="uid://csnwq2mcatr0"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://dmr6340p6l0s3"
 

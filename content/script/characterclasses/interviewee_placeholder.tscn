@@ -1,0 +1,206 @@
+[gd_scene load_steps=18 format=3 uid="uid://dlpkxeks47vvp"]
+
+[ext_resource type="Script" uid="uid://cih5quwns1it1" path="res://content/script/characterclasses/interviewee_placeholder.gd" id="1_0vqdp"]
+[ext_resource type="Texture2D" uid="uid://cbj6khh12b4p6" path="res://content/assets/texture/chars/test/CharliePlaceholder.png" id="2_l85yk"]
+[ext_resource type="Texture2D" uid="uid://dyfj2cmiygkq6" path="res://content/assets/texture/chars/test/Aldrussy.png" id="3_3sdjg"]
+[ext_resource type="Texture2D" uid="uid://casp1xv46fd6l" path="res://content/assets/texture/background/Letterbox.png" id="4_l85yk"]
+[ext_resource type="Shader" uid="uid://b7tuhnsrsnlv" path="res://content/assets/shaders/outline.gdshader" id="4_rju0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt3ei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usd7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w77h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pda3r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xc47r"]
+
+[sub_resource type="Animation" id="Animation_l85yk"]
+resource_name = "letterbox_comein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-161, 0), Vector2(-161, -125)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1, 0, 0, 0.16666667, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1, 0, 0, 0.16666667, 0, 1.3539772, -0.7, -0.26957047, 0.24889007, 0.09584774),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_3sdjg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-161, -113.04)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.3472222, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rju0b"]
+_data = {
+&"RESET": SubResource("Animation_3sdjg"),
+&"letterbox_comein": SubResource("Animation_l85yk")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pda3r"]
+shader = ExtResource("4_rju0b")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_xc47r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Texture_Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(483, 410)]
+}
+
+[sub_resource type="Animation" id="Animation_pda3r"]
+resource_name = "breathing"
+length = 5.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Texture_Body:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(483, 410), Vector2(483, 400), Vector2(483, 410)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bxpk"]
+_data = {
+&"RESET": SubResource("Animation_xc47r"),
+&"breathing": SubResource("Animation_pda3r")
+}
+
+[node name="Interviewee_Placeholder" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 161.0
+offset_right = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_0vqdp")
+Dialogue_Timeline = "AldrichTestDialogues"
+Texture_Arrays = Array[Texture2D]([ExtResource("2_l85yk"), ExtResource("3_3sdjg")])
+
+[node name="Character_Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 258.0
+offset_right = -259.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vt3ei")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_usd7p")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2w77h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pda3r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xc47r")
+
+[node name="Letterbox" type="Sprite2D" parent="."]
+position = Vector2(-161, -113.04)
+scale = Vector2(1, 1.3472222)
+texture = ExtResource("4_l85yk")
+centered = false
+
+[node name="Letterbox_Anim" type="AnimationPlayer" parent="Letterbox"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_rju0b")
+}
+autoplay = "RESET"
+speed_scale = 1.5
+
+[node name="Texture_Body" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pda3r")
+position = Vector2(483, 410)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_l85yk")
+
+[node name="TextureAnimation" type="AnimationPlayer" parent="Texture_Body"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_1bxpk")
+}
+autoplay = "breathing"
+speed_scale = 0.7
+
+[connection signal="pressed" from="Character_Button" to="." method="_on_character_button_pressed"]

@@ -18,7 +18,7 @@ scene = ExtResource("1_gshv6")
 overrides = {
 "global_bg_color": "Color(0, 0, 0, 1)",
 "global_font": "\"res://content/assets/font/apple/AppleGaramond.ttf\"",
-"global_font_size": "25.0"
+"global_font_size": "26.0"
 }
 
 [sub_resource type="Resource" id="Resource_e7om8"]
@@ -37,17 +37,16 @@ scene = ExtResource("5_opeyg")
 script = ExtResource("2_7td7s")
 scene = ExtResource("6_ytf5t")
 overrides = {
-"box_animation_in": "0",
 "box_animation_new_text": "1",
-"box_animation_out": "0",
 "box_margin_bottom": "-5.0",
-"box_size": "Vector2(1280, 200)",
+"box_size": "Vector2(1280, 150)",
 "name_label_alignment": "1",
-"name_label_box_offset": "Vector2(0, 10)",
-"name_label_custom_font_size": "32.0",
+"name_label_box_offset": "Vector2(0, -10)",
+"name_label_custom_font_size": "45.0",
 "name_label_font": "\"res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf\"",
 "name_label_use_global_font": "false",
 "name_label_use_global_font_size": "false",
+"next_indicator_enabled": "false",
 "text_alignment": "1",
 "text_size": "16.0"
 }
@@ -92,4 +91,4 @@ layer_info = {
 "16": SubResource("Resource_64uuk"),
 "17": SubResource("Resource_n6o0s")
 }
-metadata/_latest_layer = "10"
+metadata/_latest_layer = "13"
