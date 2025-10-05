@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DeathPapersPlease"
-run/main_scene="uid://csnwq2mcatr0"
+run/main_scene="uid://yy1plsvcrj62"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://dmr6340p6l0s3"
 
@@ -19,15 +19,16 @@ config/icon="uid://dmr6340p6l0s3"
 
 Theatre="*res://addons/Theatre/classes/Theatre.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-Shaker="*res://addons/shaker/src/Shaker.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"Aldrich": "res://content/dialogues/characters/testchar/Aldrich.dch"
+"Aldrich": "res://content/dialogues/characters/testchar/Aldrich.dch",
+"character1": "res://content/dialogues/characters/Character1/character1.dch"
 }
 directories/dtl_directory={
-"AldrichTestDialogues": "res://content/dialogues/characters/testchar/AldrichTestDialogues.dtl"
+"AldrichTestDialogues": "res://content/dialogues/characters/testchar/AldrichTestDialogues.dtl",
+"Character1": "res://content/dialogues/characters/Character1/Character1.dtl"
 }
 layout/style_directory={
 "": "res://content/dialogues/default_style.tres",
@@ -36,7 +37,9 @@ layout/style_directory={
 glossary/default_case_sensitive=true
 layout/style_list=["res://content/dialogues/default_style.tres"]
 layout/default_style="res://content/dialogues/default_style.tres"
-variables={}
+variables={
+"Response": ""
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -82,7 +85,7 @@ script/search_in_file_extensions=PackedStringArray("gd", "gdshader", "dlg")
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Theatre/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/sticky_scribe/plugin.cfg")
+enabled=PackedStringArray("res://addons/Theatre/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/sticky_scribe/plugin.cfg")
 
 [input]
 

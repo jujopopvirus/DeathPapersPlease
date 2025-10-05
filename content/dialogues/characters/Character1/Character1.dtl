@@ -1,0 +1,13 @@
+[wait time="2.0"]
+character1: Im hungry as hell
+[wait time="1.0"]
+label Go back
+- Can you show me your ID?
+	character1: Nuuh, Post long dialouge
+	- Why not?
+		character1: You ugly
+	- Im demanding you
+		character1: Wow so fiesty
+	[wait time="1.0"]
+	jump Go back
+[history action="resume"]
