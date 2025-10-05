@@ -209,7 +209,7 @@ _data = {
 script = ExtResource("1_pvyka")
 
 [node name="Interviewee_Placeholder" parent="." instance=ExtResource("3_2w77h")]
-position = Vector2(656, 423)
+position = Vector2(656, 405)
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_xc47r")

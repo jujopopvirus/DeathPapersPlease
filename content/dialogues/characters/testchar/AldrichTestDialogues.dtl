@@ -10,4 +10,6 @@ label Go Back
 	Aldrich: I don't know
 - What's occupation?
 	Aldrich: Student
+- (End Conversation)
+	[end_timeline]
 jump AldrichTestDialogues/Go Back
