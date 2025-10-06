@@ -1,12 +1,15 @@
 extends Node2D
 
 @export var Interviewers_Array : Array[PackedScene]
+@export var FinalScore_Scene : PackedScene
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	var new_waittime = randi_range(8, 15)
-	randomize()
 	%Timer.wait_time = new_waittime
+	%Timer.start()
+	randomize()
+	
 
 var current_interviewer : Interviewee_Character = null
 
@@ -18,6 +21,8 @@ func add_interviewer():
 		
 		add_child(current_interviewer)
 	else:
+		GlobalNode.change_scene(FinalScore_Scene)
+		GlobalNode.CurrentDay += 1
 		print("Day Finished!")
 
 func _on_dialogic_signal(argument:String):
