@@ -1,0 +1,25 @@
+[wait time="2.0"]
+Ezekyle: *Gasp* Did it work…? I-It WORKED HAHA I GOT ISEKAID IM IN THE NEW WORLD.
+Charlie:  Sir this is the after life… May you please take a seat.
+Ezekyle:  What do you mean… This does not look like the after life. I'm definitely in a new world.
+Charlie: You definitely did something for you to be here. Let’s start shall we?
+label Choices
+- Can you show me your ID?
+	Ezekyle: My ID? Huh that’s weird.
+	Ezekyle: I mean.. Do you want my steam ID or my gamer Id?
+	Charlie:  ……
+	Charlie: So you don’t have one?
+- What is your Occupation?
+	Ezekyle: I’m one of the heroes of the party that will slay the DEMON KING!!!
+	Ezekyle: Unemployed i see.
+- What was the last thing you remember?
+	Ezekyle: Well It was night time in my base strategizing my next move!
+	Ezekyle: I own a pile of treasures so it’s hard to move around and then suddenly.
+	Ezekyle: I own this rune that powers any modern digital magic wand that controls a player! a rune that I own backfired at me!
+	Ezekyle:  It suddenly exploded causing a fire.
+	Ezekyle: I tried my best to escape but the rune emits this smokey cursing aura! That spreads throughout my abode!
+	Ezekyle: So I held my breath clenching my fist up high praying to the gods to take me to a new adventure.
+	Charlie: ……..
+- (End Conversation)
+	[end_timeline]
+jump Choices

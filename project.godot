@@ -25,6 +25,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "Aldrich": "res://content/dialogues/characters/testchar/Aldrich.dch",
 "Charlie": "res://content/dialogues/characters/Charlie/Charlie.dch",
+"Ezekyle": "res://content/dialogues/characters/Ezekyle/Ezekyle.dch",
 "Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dch",
 "Grey Telon": "res://content/dialogues/characters/Grey Telon/Grey Telon.dch",
 "Jack": "res://content/dialogues/characters/Jack/Jack.dch",
@@ -36,6 +37,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "AldrichTestDialogues": "res://content/dialogues/characters/testchar/AldrichTestDialogues.dtl",
 "Character1": "res://content/dialogues/characters/Character1/Character1.dtl",
+"Ezekyle": "res://content/dialogues/characters/Ezekyle/Ezekyle.dtl",
 "Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dtl",
 "Grey Telon": "res://content/dialogues/characters/Grey Telon/Grey Telon.dtl",
 "Jack": "res://content/dialogues/characters/Jack/Jack.dtl",
