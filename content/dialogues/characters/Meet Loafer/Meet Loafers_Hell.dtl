@@ -1,0 +1,4 @@
+[wait time="2.0"]
+"Meet Loafer": Is that so… It’s alright, It’s my fault in the first place that we got stuck in the cave. I understand, thank you.
+[signal arg="Finish_Interview"]
+[end_timeline]

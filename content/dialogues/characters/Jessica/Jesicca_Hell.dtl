@@ -1,0 +1,4 @@
+[wait time="2.0"]
+Jessica: … I see, thank you… can you please promise me one thing? Please take care of Jericho, tell him… Mama’s waiting.
+[signal arg="Finish_Interview"]
+[end_timeline]
