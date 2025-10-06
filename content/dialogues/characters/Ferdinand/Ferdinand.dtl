@@ -8,6 +8,7 @@ Charlie: Oh hey, welcome to the afterlife!
 Charlie: Take a seat here and make yourself at home, I have some questions for you.
 [signal arg="emotion_01"]
 Ferdinand: Ah I see…. Well this place is more boring than I imagined….
+Ferdinand: Well atleast I can chat here with you then...
 [wait time="1.0"]
 label Choices
 [signal arg="ID_HIDE"]

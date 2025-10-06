@@ -52,16 +52,20 @@ func _on_heaven_button_pressed() -> void:
 	if occupation != "" and cod != "":
 		finalstamp = "Heaven"
 		final_stamp.texture = Heaven_Stamp
-		%FinalizeButton.show()
+		if GlobalNode.Current_Character != null:
+			%FinalizeButton.show()
 
 func _on_hell_button_pressed() -> void:
 	if occupation != "" and cod != "":
 		finalstamp = "Hell"
 		final_stamp.texture = Hell_Stamp
-		%FinalizeButton.show()
+		if GlobalNode.Current_Character != null:
+			%FinalizeButton.show()
 #endregion
 
 func _ready() -> void:
+	if GlobalNode.Current_Character != null:
+		NameInput.text = GlobalNode.Current_Character.character_name
 	occ_item_list.hide()
 	cod_item_list.hide()
 	%FinalizeButton.hide()
