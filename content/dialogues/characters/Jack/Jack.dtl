@@ -1,0 +1,21 @@
+[wait time="2.0"]
+( A door suddenly opnened)
+(A slender man just came over to the room, his skin was rotting though his eyes were uncannily normal. He sits down… and says nothing.)
+Charlie: Hi nice to meet you! So your name is… Jack?
+Jack: …
+Charlie: This is gonna go great...
+label Choices
+- Can you show me your ID?
+	Jack: ...
+	Jack take out his passport ID
+	[signal arg="ID"]
+	[wait time="2.0"]
+- What is your Occupation?
+	 (Jack is showing a raking gesture, after that he did a motion that looks like he’s harvesting something.)
+- What was the last thing you remember?
+	(Jack was thinking... )
+	(He was gesturing something like a cylinder, maybe something got spilled over?)
+	(He was gesturing something like a cylinder, maybe something got spilled over?)
+- (End Conversation)
+	[end_timeline]
+jump Choices
