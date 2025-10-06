@@ -2,7 +2,7 @@ extends Node2D
 class_name Interviewee_Character
 
 @export_category("Interviewee Character") 
-@export var Character_Info : Character_Information_Resource
+@onready var Character_Info : Character_Information_Resource  = %Character_Information_Resource
 @export var Texture_Arrays : Array[Texture2D] #<------------------ Textures are Arrays
 @onready var Texture_Character : Sprite2D = %Texture_Body
 

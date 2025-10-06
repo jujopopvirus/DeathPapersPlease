@@ -5,6 +5,8 @@
 [node name="Ferdinand" instance=ExtResource("1_6m10o")]
 
 [node name="Character_Information_Resource" parent="." index="2"]
+unique_name_in_owner = true
 character_name = "Ferdinand"
 cause_of_death = "Vehicle"
 occupation = "Student"
+Dialogue_Timeline = "Ferdinand"
