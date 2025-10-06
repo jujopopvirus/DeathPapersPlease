@@ -1,0 +1,5 @@
+[wait time="2.0"]
+Jessica: I don’t care if I go to hell or not, if that bastard ends up with the same fate as me?  I’ll burn him there until he cries.
+(Jessica leaves the room…)
+[signal arg="Finish_Interview"]
+[end_timeline]

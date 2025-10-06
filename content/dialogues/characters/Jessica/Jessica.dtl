@@ -1,24 +1,25 @@
 [wait time="2.0"]
-[signal arg="emotion-1"]
+[signal arg="emotion_1"]
 Jessica: Is… this the hospital?
 Jessica: I… I need to know what happened to my son Jericho quickly!
 Charlie: Sorry ma’am but you’re on the other side of life right now, all you have to do is to answer my questions and wait for the other side.
 Jessica: No… No No No No
 Jessica: My Jericho… I need to save my lil Jericho!
-[signal arg="emotion-3"]
+[signal arg="emotion_3"]
 ( The woman’s anger has turned into despair, and now it’s all just tears knowing that there is nothing she can do to save her Jericho)
+[signal arg="ID_HIDE"]
 label Choices
 - Can you show me your ID?
 	Charlie: (… Seems like she does not respond to my questions.)
-	[signal arg="CORRODED ID"]
-	[wait time="2.0"]
+	[signal arg="ID_SHOW"]
+	[wait time="5.0"]
 - What is your Occupation?
 	Charlie: (… Seems like she does not respond to my questions.)
 - What was the last thing you remember?
-	[signal arg="emotion-2"]
-	Jessica:  All I remember is seeing that blonde haired bastard… He did nothing but hit Jericho with a bottle…
+	[signal arg="emotion_2"]
+	Jessica: All I remember is seeing that blonde haired bastard… He did nothing but hit Jericho with a bottle…
 	Jessica: I should have just realized it from the start…
-	[signal arg="emotion-3"]
+	[signal arg="emotion_3"]
 	Jessica: Why did I marry that monster… … I’m sorry Jericho… I’m sorry…
 - (End Conversation)
 	[end_timeline]
