@@ -19,6 +19,7 @@ config/icon="uid://dmr6340p6l0s3"
 
 Theatre="*res://addons/Theatre/classes/Theatre.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalNode="*res://content/script/global_node.tscn"
 
 [dialogic]
 
@@ -39,6 +40,8 @@ directories/dtl_directory={
 "Character1": "res://content/dialogues/characters/Character1/Character1.dtl",
 "Ezekyle": "res://content/dialogues/characters/Ezekyle/Ezekyle.dtl",
 "Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dtl",
+"FerdinandHeaven": "res://content/dialogues/characters/Ferdinand/FerdinandHeaven.dtl",
+"FerdinandHell": "res://content/dialogues/characters/Ferdinand/FerdinandHell.dtl",
 "Grey Telon": "res://content/dialogues/characters/Grey Telon/Grey Telon.dtl",
 "Jack": "res://content/dialogues/characters/Jack/Jack.dtl",
 "Jessica": "res://content/dialogues/characters/Jessica/Jessica.dtl",

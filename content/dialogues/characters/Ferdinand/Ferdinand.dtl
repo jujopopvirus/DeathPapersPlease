@@ -1,22 +1,28 @@
 [wait time="2.0"]
+[signal arg="emotion_02"]
 Ferdinand: Hello… Could you tell me where the exit is?
 Ferdinand: I have to go to school,  I have a thesis defense this morning…
 Ferdinand: I don’t trust my groupmates…
 Ferdinand: Where am I anyway…..
 Charlie: Oh hey, welcome to the afterlife!
 Charlie: Take a seat here and make yourself at home, I have some questions for you.
+[signal arg="emotion_01"]
 Ferdinand: Ah I see…. Well this place is more boring than I imagined….
 [wait time="1.0"]
 label Choices
+[signal arg="ID_HIDE"]
 - Can you show me your ID?
+	[signal arg="emotion_03"]
 	Ferdinand: My School ID? Why would you guys need a---  You know what, never mind….. Here.
-	[signal]
-	[wait time="2.0"]
+	[signal arg="ID_SHOW"]
+	[wait time="5.0"]
 - What is your Occupation?
+	[signal arg="emotion_02"]
 	Ferdinand: Well I’m a highschool student in a shitty school system.
 - What was the last thing you remember?
 	Ferdinand: All I remember is that I am on my way to school… I haven't had much sleep these past few days due to my school work overpiling..
 	Ferdinand: Not to mention my classmates taking advantage of me. So I drank a lot of coffee without eating anything.
+	[signal arg="emotion_03"]
 	Ferdinand: Memorized a lot of stuff, not to mention arguing with my parents. Lastly… There was a truck.
 	label Follow up
 	- What was the argument about?
@@ -29,5 +35,6 @@ label Choices
 	- That is all, thank you.
 		jump Choices
 - (End Conversation)
+	[signal arg="emotion_01"]
 	[end_timeline]
 jump Choices

@@ -1,0 +1,4 @@
+[wait time="2.0"]
+Ferdinand: I can now have the opportunity to sleep all day, thank you ma’am!
+[signal arg="Finish_Interview"]
+[end_timeline]
