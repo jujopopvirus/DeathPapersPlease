@@ -19,6 +19,7 @@ config/icon="uid://dmr6340p6l0s3"
 
 Theatre="*res://addons/Theatre/classes/Theatre.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalNode="*res://content/script/global_node.tscn"
 
 [dialogic]
 

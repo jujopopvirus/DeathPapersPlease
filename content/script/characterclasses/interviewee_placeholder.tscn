@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlpkxeks47vvp"]
+[gd_scene load_steps=16 format=3 uid="uid://dlpkxeks47vvp"]
 
 [ext_resource type="Script" uid="uid://cih5quwns1it1" path="res://content/script/characterclasses/interviewee_placeholder.gd" id="1_0vqdp"]
 [ext_resource type="Texture2D" uid="uid://d4b13ytwo4cdj" path="res://content/assets/texture/chars/Day01/RoadKillStudent/01.png" id="2_3sdjg"]
 [ext_resource type="Texture2D" uid="uid://c40mg47n3gqrm" path="res://content/assets/texture/chars/Day01/RoadKillStudent/02.png" id="3_rju0b"]
 [ext_resource type="Shader" uid="uid://b7tuhnsrsnlv" path="res://content/assets/shaders/outline.gdshader" id="4_rju0b"]
 [ext_resource type="Texture2D" uid="uid://dwqilstdm1upy" path="res://content/assets/texture/chars/Day01/RoadKillStudent/03.png" id="4_sufv6"]
+[ext_resource type="Script" uid="uid://e2fgfsoei5en" path="res://content/script/characterclasses/char_class.gd" id="6_3sdjg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt3ei"]
 
@@ -66,7 +67,6 @@ _data = {
 
 [node name="Interviewee_Placeholder" type="Node2D"]
 script = ExtResource("1_0vqdp")
-Dialogue_Timeline = "AldrichTestDialogues"
 Texture_Arrays = Array[Texture2D]([ExtResource("2_3sdjg"), ExtResource("3_rju0b"), ExtResource("4_sufv6")])
 
 [node name="ButtonControl" type="Control" parent="."]
@@ -106,5 +106,9 @@ libraries = {
 }
 autoplay = "breathing"
 speed_scale = 0.7
+
+[node name="Character_Information_Resource" type="Node" parent="."]
+script = ExtResource("6_3sdjg")
+metadata/_custom_type_script = "uid://e2fgfsoei5en"
 
 [connection signal="pressed" from="ButtonControl/Character_Button" to="." method="_on_character_button_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://k3fb5yfhkbxe"]
+
+[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="1_6m10o"]
+
+[node name="Ferdinand" instance=ExtResource("1_6m10o")]
+
+[node name="Character_Information_Resource" parent="." index="2"]
+character_name = "Ferdinand"
+cause_of_death = "Vehicle"
+occupation = "Student"
