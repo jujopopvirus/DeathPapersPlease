@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://7xwah2bx5ag0"]
+
+[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="1_jxsb5"]
+[ext_resource type="Texture2D" uid="uid://bs4pcy6kbd1gv" path="res://content/assets/texture/chars/Day01/Zookeeper/01.png" id="2_f2v6j"]
+
+[node name="Ms Braid" instance=ExtResource("1_jxsb5")]
+Texture_Arrays = Array[Texture2D]([ExtResource("2_f2v6j")])
+
+[node name="Texture_Body" parent="." index="1"]
+texture = ExtResource("2_f2v6j")
+
+[node name="Character_Information_Resource" parent="." index="2"]
+character_name = "Ms. Braid"
+cause_of_death = "Wild Animals"
+occupation = "Zookeeper"
+final_verdict = "Hell"
+Dialogue_Timeline = "Ms Braid"

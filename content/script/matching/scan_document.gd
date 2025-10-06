@@ -77,6 +77,10 @@ func _on_close_button_pressed() -> void:
 	self.queue_free()
 
 func _on_yes_button_pressed() -> void:
+	print(occupation)
+	print(cod)
+	print(finalstamp)
+	GlobalNode.Check_Document(occupation, cod, finalstamp)
 	self.queue_free()
 
 func _on_no_button_pressed() -> void:
