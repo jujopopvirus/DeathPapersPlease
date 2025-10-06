@@ -1,0 +1,21 @@
+[wait time="2.0"]
+"Meet Loafer":  Greetings ma'am, sorry for taking up your time, but could you please tell me where I am?
+Charlie: Hi! Don’t worry you are not taking up any of my time. To answer your question, you are currently in the after life. Please have a seat, good sir!
+"Meet Loafer": Thank you for the offer, I will gladly sit comfortably.
+label Choices
+- Can you show me your ID?
+	"Meet Loafer": I do carry my ID all the time, In case of what would happen to me.
+	[signal arg="ID"]
+	[wait time="2.0"]
+- What is your Occupation?
+	"Meet Loafer": I don’t know if this is considered an Occupation, but I am a camper. I travel around nature and sometimes take pictures of my journey.
+- What was the last thing you remember?
+	"Meet Loafer": To be honest with you, I really don’t know. Everything was so hazy like blurry.
+	"Meet Loafer": I could tell you that I was camping with my friends that I have known for years.
+	"Meet Loafer": It was raining so hard at that time that we had to take shelter in a nearby cave. We were waiting for the rain to set in, but suddenly there was a landslide above of the cave we are settling in, because of that it blocked the entrance.
+	"Meet Loafer": I do remember being optimistic about everything, so with my tools I started digging. Day by day. Rationing our foods and everything.
+	"Meet Loafer": We were stuck there for 50 days now. Then one day while we were asleep I felt like something was poking me, then last thing I remember It hurted so much, I couldn't see anything as something stabbed my eye, I screamed in pain.
+	"Meet Loafer": I managed to take a glimpse of what just happened, I saw one of my friends in the corner  in fear and a beast in front of me…. I can’t describe it but It’s pretty hairy. Must be a wild animal.
+- (End of Coversation)
+	[end_timeline]
+jump Choices
