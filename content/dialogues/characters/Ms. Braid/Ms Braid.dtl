@@ -1,0 +1,42 @@
+[wait time="2.0"]
+"Ms Braid": Hi Maam!
+[signal arg="emotion-2"]
+"Ms Braid": GrUhG… *COUGH COUGH*
+Charlie: Hello there… Welcome to the afterlife! Please take a seat.
+[signal arg="emotion-1"]
+"Ms Braid": Wow this is the afterlife? It's so…. Corporate!
+label Choices
+- Can you show me your ID?
+	"Ms Braid": You need my ID?
+	"Ms Braid": I have my business ID but I don't know what is the use of this in the afterlife…
+	[signal arg="BUSINESS ID"]
+	[wait time="2.0"]
+- What is your Occupation?
+	"Ms Braid": My occupation? I work as a veterinarian, it's a hassle to take care of the animals there in the vet.
+	"Ms Braid": Sometimes the owners do not take care of their pets, which leads to them being aggressive to people, so I’m the only veterinarian who has to deal with ferocious animals.
+	"Ms Braid": People need to learn to thank me.
+- What was the last thing you remember?
+	"Ms Braid": ………
+	"Ms Braid": It was a bob cat…..
+	"Ms Braid": It ruined me…
+	"Ms Braid": It was a bad animal that's why..That Monster led me here.
+	"Ms Braid": If I could just euthanize it earlier this morning I didn’t have to deal with what I'm facing right now.
+	label Follow up
+	- Tell me… Where did the Bob Cat come from?
+		"Ms Braid": Its name is Ava, I adopted it as my pet a month ago …
+		"Ms Braid": I tried to take care of that monster, but |it was a failure…
+		"Ms Braid": I had to save wild animals! I’m a good |person!!
+		jump Follow up
+	- Are you aware in the first place that Bob cats are wild animals and cannot be tamed as house pets.
+		"Ms Braid": You blabber a lot do you?
+		"Ms Braid": I’m a professional here, I know what I am doing.
+		"Ms Braid": I could've been euthanized when it was not being obedient. I do that to all of my pets.
+		"Ms Braid": They need to learn to follow instructions!!
+		"Ms Braid": I have my reasons! I need to protect other people from getting hurt by their own pets!
+		"Ms Braid": I want them to follow us people.
+		jump Follow up
+	- That is all, thank you.
+		jump Choices
+- (End Conversation)
+	[end_timeline]
+jump Choices

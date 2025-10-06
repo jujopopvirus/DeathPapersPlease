@@ -1,0 +1,38 @@
+[wait time="2.0"]
+[signal arg="emotion-2"]
+"Grey Telon": Good day Dear… I’m sorry to bother you, but could you tell me where I am?
+"Grey Telon": I just woke up here, maybe perhaps this is the evacuation center?
+Charlie: Sorry Grandma but this is the afterlife..
+Charlie: How about you go take a seat here and be comfortable. I’m just here to ask you some questions.
+"Grey Telon": Is that so… Well I'm at an age that is ready to settle anyway. Let us start shall we my dear.
+label Choices
+- Can you show me your ID?
+	"Grey Telon": Good thing I held my purse, will my passport be fine?
+	[signal arg="passport"]
+	[wait time="2.0"]
+- What is your Occupation?
+	"Grey Telon": I’m already retired my dear.. But I used to work on weather forecasts in my prime.
+	"Grey Telon": Ironic how my job backfired at me.
+- What was the last thing you remember?
+	"Grey Telon": If I recall correctly. It was in the afternoon there was a strong tornado that came through my town.
+	"Grey Telon": All of us had to evacuate but I saw a mother cat with its kitten in danger.
+	"Grey Telon": I don’t know what happened but something came through me and ran my withered legs to its full potential. I carried them all and managed to give them to other people evacuating.
+	"Grey Telon": I was so exhausted my legs gave up…. And.. yeah.. I accepted it…. I remember now….
+	label Follow up
+	- Do you live alone?
+		"Grey Telon": Yeah, I live alone. I have kids, but they rarely visit me… It’s alright, I understand that they are busy, Life is hard to live anyway.
+		"Grey Telon": I just send them letters everyday and hope they will be able to read them.
+		jump Follow up
+	- How does it feel saving the cat more than your own?
+		[signal arg="emotion-1"]
+		[wait time="1.5"]
+		[signal arg="emotion-2"]
+		"Grey Telon": I felt so free, like I ran and found my purpose one last time.
+		"Grey Telon": I value their life more than my own. But I do hope they are now safe cuddled in a warm blanket my dear.
+		"Grey Telon": I don’t have any regrets.
+		jump Follow up
+	- That is all, thank you.
+		jump Choices
+- (End Conversation)
+	[end_timeline]
+jump Choices

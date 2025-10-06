@@ -26,13 +26,17 @@ directories/dch_directory={
 "Aldrich": "res://content/dialogues/characters/testchar/Aldrich.dch",
 "Charlie": "res://content/dialogues/characters/Charlie/Charlie.dch",
 "Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dch",
+"Grey Telon": "res://content/dialogues/characters/Grey Telon/Grey Telon.dch",
+"Ms Braid": "res://content/dialogues/characters/Ms. Braid/Ms Braid.dch",
 "character": "res://content/dialogues/characters/Ferdinand/character.dch",
 "character1": "res://content/dialogues/characters/Character1/character1.dch"
 }
 directories/dtl_directory={
 "AldrichTestDialogues": "res://content/dialogues/characters/testchar/AldrichTestDialogues.dtl",
 "Character1": "res://content/dialogues/characters/Character1/Character1.dtl",
-"Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dtl"
+"Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dtl",
+"Grey Telon": "res://content/dialogues/characters/Grey Telon/Grey Telon.dtl",
+"Ms Braid": "res://content/dialogues/characters/Ms. Braid/Ms Braid.dtl"
 }
 layout/style_directory={
 "": "res://content/dialogues/default_style.tres",

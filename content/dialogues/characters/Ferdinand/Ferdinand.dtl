@@ -13,17 +13,21 @@ label Choices
 	[signal]
 	[wait time="2.0"]
 - What is your Occupation?
-	Ferdinand:  Well I’m a highschool student in a shitty school system.
+	Ferdinand: Well I’m a highschool student in a shitty school system.
 - What was the last thing you remember?
 	Ferdinand: All I remember is that I am on my way to school… I haven't had much sleep these past few days due to my school work overpiling..
 	Ferdinand: Not to mention my classmates taking advantage of me. So I drank a lot of coffee without eating anything.
 	Ferdinand: Memorized a lot of stuff, not to mention arguing with my parents. Lastly… There was a truck.
 	label Follow up
 	- What was the argument about?
-		Ferdinand:  I don’t get my parents… They keep nagging me to go to sleep but they get mad when I give them scores that are not up to their standards.
-		Ferdinand:  I feel… So tired of everything… I just wanna sleep the whole day and be on my bed.
+		Ferdinand: I don’t get my parents… They keep nagging me to go to sleep but they get mad when I give them scores that are not up to their standards.
+		Ferdinand: I feel… So tired of everything… I just wanna sleep the whole day and be on my bed.
+		jump Follow up
 	- What was about your classmates?
-		Ferdinand:  They don’t even help me with our project, I tried to sugarcoat everything to avoid problems but they tell me I over react things and that I keep things serious. How could I not?
-	- That is all, thank you
+		Ferdinand: They don’t even help me with our project, I tried to sugarcoat everything to avoid problems but they tell me I over react things and that I keep things serious. How could I not?
+		jump Follow up
+	- That is all, thank you.
 		jump Choices
+- (End Conversation)
+	[end_timeline]
 jump Choices

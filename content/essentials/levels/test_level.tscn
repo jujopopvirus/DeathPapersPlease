@@ -210,7 +210,7 @@ script = ExtResource("1_pvyka")
 
 [node name="Interviewee_Placeholder" parent="." instance=ExtResource("3_2w77h")]
 position = Vector2(656, 405)
-Dialogue_Timeline = "Ferdinand"
+Dialogue_Timeline = "Ms Braid"
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_xc47r")
