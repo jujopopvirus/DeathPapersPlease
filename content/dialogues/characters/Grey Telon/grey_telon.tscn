@@ -8,13 +8,15 @@
 [node name="Grey Telon" instance=ExtResource("1_pkspi")]
 Texture_Arrays = Array[Texture2D]([ExtResource("2_hbbyu"), ExtResource("3_sre6k")])
 
-[node name="Texture_Body" parent="." index="1"]
+[node name="Texture_Body" parent="." index="2"]
 texture = ExtResource("2_hbbyu")
 
-[node name="Character_Information_Resource" parent="." index="2"]
+[node name="Character_Information_Resource" parent="." index="3"]
 character_name = "Grey Telon"
 cause_of_death = "Natural Disaster"
 character_id = ExtResource("4_hbbyu")
 occupation = "Grandmother"
 final_verdict = "Heaven"
 Dialogue_Timeline = "Grey Telon"
+HeavenTimeline = "GreyTelonHeaven"
+HellTimeline = "GreyTelonHell"

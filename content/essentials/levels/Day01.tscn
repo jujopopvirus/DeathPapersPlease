@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://s84xkw5p7voj"]
+[gd_scene load_steps=23 format=3 uid="uid://s84xkw5p7voj"]
 
 [ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_6u50l"]
 [ext_resource type="Shader" uid="uid://bmqvfjeiexaqr" path="res://content/assets/shaders/noise.gdshader" id="2_7xg0s"]
@@ -71,8 +71,36 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 6)
 }
 
+[sub_resource type="Animation" id="Animation_2dqf1"]
+resource_name = "ExitAnimation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-234, 405), Vector2(656, 405)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-234, 0, 0, 2.7979722, 1067.273, 656, -0.9353614, 9.86261, 0.7222128, -7.6151357),
+"times": PackedFloat32Array(0, 6)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mudb7"]
 _data = {
+&"ExitAnimation": SubResource("Animation_2dqf1"),
 &"RESET": SubResource("Animation_clc0s"),
 &"Walking Animation": SubResource("Animation_qi2v4")
 }
@@ -385,7 +413,6 @@ Interviewers_Array = Array[PackedScene]([ExtResource("4_7xg0s"), ExtResource("5_
 
 [node name="Timer" type="Timer" parent="InterviewPosition"]
 unique_name_in_owner = true
-wait_time = 15.0
 one_shot = true
 autostart = true
 
@@ -440,4 +467,5 @@ scale = Vector2(1.365, 1.68)
 texture = ExtResource("6_mudb7")
 
 [connection signal="timeout" from="InterviewPosition/Timer" to="InterviewPosition" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="InterviewPosition/WalkAnim" to="InterviewPosition" method="_on_walk_anim_animation_finished"]
 [connection signal="pressed" from="CameraNode/Desk/FolderButton" to="CameraNode/Desk" method="_on_folder_button_pressed"]

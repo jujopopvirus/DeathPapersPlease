@@ -43,9 +43,13 @@ directories/dtl_directory={
 "FerdinandHeaven": "res://content/dialogues/characters/Ferdinand/FerdinandHeaven.dtl",
 "FerdinandHell": "res://content/dialogues/characters/Ferdinand/FerdinandHell.dtl",
 "Grey Telon": "res://content/dialogues/characters/Grey Telon/Grey Telon.dtl",
+"GreyTelonHeaven": "res://content/dialogues/characters/Grey Telon/GreyTelonHeaven.dtl",
+"GreyTelonHell": "res://content/dialogues/characters/Grey Telon/GreyTelonHell.dtl",
 "Jack": "res://content/dialogues/characters/Jack/Jack.dtl",
 "Jessica": "res://content/dialogues/characters/Jessica/Jessica.dtl",
-"Ms Braid": "res://content/dialogues/characters/Ms. Braid/Ms Braid.dtl"
+"Ms Braid": "res://content/dialogues/characters/Ms. Braid/Ms Braid.dtl",
+"MsBraidHeaven": "res://content/dialogues/characters/Ms. Braid/MsBraidHeaven.dtl",
+"MsBraidHell": "res://content/dialogues/characters/Ms. Braid/MsBraidHell.dtl"
 }
 layout/style_directory={
 "": "res://content/dialogues/default_style.tres",
