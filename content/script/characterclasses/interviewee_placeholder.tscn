@@ -1,11 +1,117 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlpkxeks47vvp"]
+[gd_scene load_steps=20 format=3 uid="uid://dlpkxeks47vvp"]
 
 [ext_resource type="Script" uid="uid://cih5quwns1it1" path="res://content/script/characterclasses/interviewee_placeholder.gd" id="1_0vqdp"]
 [ext_resource type="Texture2D" uid="uid://d4b13ytwo4cdj" path="res://content/assets/texture/chars/Day01/RoadKillStudent/01.png" id="2_3sdjg"]
 [ext_resource type="Texture2D" uid="uid://c40mg47n3gqrm" path="res://content/assets/texture/chars/Day01/RoadKillStudent/02.png" id="3_rju0b"]
-[ext_resource type="Shader" uid="uid://b7tuhnsrsnlv" path="res://content/assets/shaders/outline.gdshader" id="4_rju0b"]
 [ext_resource type="Texture2D" uid="uid://dwqilstdm1upy" path="res://content/assets/texture/chars/Day01/RoadKillStudent/03.png" id="4_sufv6"]
+[ext_resource type="Shader" uid="uid://cedvid0d76g5y" path="res://content/assets/shaders/displacement.gdshader" id="5_3sdjg"]
+[ext_resource type="Texture2D" uid="uid://blvo0uj1viei3" path="res://content/assets/texture/chars/Day01/Zookeeper/ID.png" id="5_rju0b"]
 [ext_resource type="Script" uid="uid://e2fgfsoei5en" path="res://content/script/characterclasses/char_class.gd" id="6_3sdjg"]
+
+[sub_resource type="Animation" id="Animation_sufv6"]
+resource_name = "ID_Slide"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.2000003),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-76, -1502), Vector2(-76, 65)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.2000003),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.92430806]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-76, 0, 0, 0.70000005, 0, -50, -0.25, 0, 0.355, 0),
+"times": PackedFloat32Array(0, 4.2000003)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-1502, 0, 0, 3.3657494, 2030.8464, 0, -0.36758423, -37.791462, 0.24271032, 24.95313),
+"times": PackedFloat32Array(0, 4.2000003)
+}
+
+[sub_resource type="Animation" id="Animation_pktfx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-76, -1522.0001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-76, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(65, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxnoe"]
+_data = {
+&"ID_Slide": SubResource("Animation_sufv6"),
+&"RESET": SubResource("Animation_pktfx")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt3ei"]
 
@@ -18,13 +124,12 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xc47r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pda3r"]
-shader = ExtResource("4_rju0b")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 1
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
+shader = ExtResource("5_3sdjg")
+shader_parameter/interval = 0.4
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 3.0
+shader_parameter/intensityY = 3.0
+shader_parameter/seed = 42.0
 
 [sub_resource type="Animation" id="Animation_xc47r"]
 length = 0.001
@@ -69,6 +174,21 @@ _data = {
 script = ExtResource("1_0vqdp")
 Texture_Arrays = Array[Texture2D]([ExtResource("2_3sdjg"), ExtResource("3_rju0b"), ExtResource("4_sufv6")])
 
+[node name="ID_Texture" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+position = Vector2(-76, 65)
+scale = Vector2(0.29555315, 0.29555315)
+texture = ExtResource("5_rju0b")
+
+[node name="SlideID" type="AnimationPlayer" parent="ID_Texture"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_nxnoe")
+}
+speed_scale = 4.0
+
 [node name="ButtonControl" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -109,6 +229,8 @@ speed_scale = 0.7
 
 [node name="Character_Information_Resource" type="Node" parent="."]
 script = ExtResource("6_3sdjg")
+HeavenTimeline = "Heaven"
+HellTimeline = "Hell"
 metadata/_custom_type_script = "uid://e2fgfsoei5en"
 
 [connection signal="pressed" from="ButtonControl/Character_Button" to="." method="_on_character_button_pressed"]

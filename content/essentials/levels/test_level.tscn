@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://csnwq2mcatr0"]
+[gd_scene load_steps=12 format=3 uid="uid://csnwq2mcatr0"]
 
 [ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_pvyka"]
+[ext_resource type="Shader" uid="uid://bmqvfjeiexaqr" path="res://content/assets/shaders/noise.gdshader" id="2_77t5d"]
 [ext_resource type="Texture2D" uid="uid://kv08k7uptybd" path="res://content/assets/texture/background/DraftBackground.jpg" id="2_xc47r"]
-[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="3_2w77h"]
-[ext_resource type="Script" path="res://content/script/cameraanimation.gd" id="4_pda3r"]
+[ext_resource type="PackedScene" uid="uid://k3fb5yfhkbxe" path="res://content/dialogues/characters/Ferdinand/Ferdinand.tscn" id="4_o3j8k"]
+[ext_resource type="Script" uid="uid://dbmux4ayes67o" path="res://content/script/cameraanimation.gd" id="4_pda3r"]
 [ext_resource type="Texture2D" uid="uid://casp1xv46fd6l" path="res://content/assets/texture/background/Letterbox.png" id="5_pda3r"]
+[ext_resource type="Script" uid="uid://d0m1rovrp5cn6" path="res://content/script/desk.gd" id="9_iuuh5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bxpk"]
+shader = ExtResource("2_77t5d")
+shader_parameter/strength = 19.99999955296
 
 [sub_resource type="Animation" id="Animation_2w77h"]
 resource_name = "LetterboxCamein"
@@ -87,7 +93,7 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.2, -0.25, 0, 1.2719913, 0.0059098005, 0.845, -0.56134176, 0.05457133, 0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 1.7333335, 0.009640217, 0.845, -0.9666667, 0.059996247, 0, 0),
 "times": PackedFloat32Array(0.4, 2.2)
 }
 tracks/7/type = "value"
@@ -101,6 +107,40 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.72426915, 0.5125308, 0.6539521, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Desk:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5082042, 0.50932384, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-322, 368), Vector2(-322, 197), Vector2(-326, 360)]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Desk:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-322, -0.25, 0, 0.25, 0, -326, -0.28177938, 0.6666667, 0, 0),
+"times": PackedFloat32Array(0.50932384, 2.2)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Desk:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(197, -0.24451767, 22.394928, 0.82400954, -75.46953, 360, -1.3666668, 1.6004639, 0, 0),
+"times": PackedFloat32Array(0.50932384, 2.2)
 }
 
 [sub_resource type="Animation" id="Animation_pda3r"]
@@ -198,6 +238,40 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Desk:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-322, 197)]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Desk:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-322, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Desk:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(197, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xc47r"]
 _data = {
@@ -208,8 +282,31 @@ _data = {
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_pvyka")
 
-[node name="Interviewee_Placeholder" parent="." instance=ExtResource("3_2w77h")]
-position = Vector2(656, 405)
+[node name="Effect" type="CanvasLayer" parent="."]
+
+[node name="Noise" type="Control" parent="Effect"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shader" type="ColorRect" parent="Effect/Noise"]
+material = SubResource("ShaderMaterial_1bxpk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Ferdinand" parent="." instance=ExtResource("4_o3j8k")]
+position = Vector2(634, 405)
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_xc47r")
@@ -218,6 +315,15 @@ centered = false
 [node name="CameraNode" type="Camera2D" parent="."]
 position = Vector2(640, 360)
 script = ExtResource("4_pda3r")
+
+[node name="Desk" type="Node2D" parent="CameraNode"]
+position = Vector2(-322, 197)
+script = ExtResource("9_iuuh5")
+
+[node name="FolderButton" type="Button" parent="CameraNode/Desk"]
+z_index = 2
+offset_right = 634.0
+offset_bottom = 120.0
 
 [node name="animation" type="AnimationPlayer" parent="CameraNode"]
 unique_name_in_owner = true
@@ -231,9 +337,4 @@ speed_scale = 1.5
 scale = Vector2(1.365, 1.68)
 texture = ExtResource("5_pda3r")
 
-[node name="Button" type="Button" parent="."]
-z_index = 2
-offset_left = 318.0
-offset_top = 576.0
-offset_right = 952.0
-offset_bottom = 696.0
+[connection signal="pressed" from="CameraNode/Desk/FolderButton" to="CameraNode/Desk" method="_on_folder_button_pressed"]
