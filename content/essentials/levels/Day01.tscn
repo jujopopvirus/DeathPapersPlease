@@ -1,0 +1,273 @@
+[gd_scene load_steps=11 format=3 uid="uid://s84xkw5p7voj"]
+
+[ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_6u50l"]
+[ext_resource type="Shader" uid="uid://bmqvfjeiexaqr" path="res://content/assets/shaders/noise.gdshader" id="2_7xg0s"]
+[ext_resource type="Script" uid="uid://v4oj42146toq" path="res://content/script/matching/interview_position.gd" id="3_gpa0p"]
+[ext_resource type="Texture2D" uid="uid://kv08k7uptybd" path="res://content/assets/texture/background/DraftBackground.jpg" id="4_qi2v4"]
+[ext_resource type="Script" uid="uid://dbmux4ayes67o" path="res://content/script/cameraanimation.gd" id="5_clc0s"]
+[ext_resource type="Texture2D" uid="uid://casp1xv46fd6l" path="res://content/assets/texture/background/Letterbox.png" id="6_mudb7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bxpk"]
+shader = ExtResource("2_7xg0s")
+shader_parameter/strength = 19.99999955296
+
+[sub_resource type="Animation" id="Animation_2w77h"]
+resource_name = "LetterboxCamein"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4652001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Letterbox:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.602), Vector2(0.835, 0.775)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Letterbox:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3999999, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letterbox:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.40999988, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:zoom:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -1.0985334, -0.0006123781, 0, 0),
+"times": PackedFloat32Array(0, 1.4652001)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:zoom:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -1.0652001, 0.0024496317, 0, 0),
+"times": PackedFloat32Array(0, 1.4652001)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Letterbox:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 1.2719913, 0.0059098005, 0.845, -0.56134176, 0.05457133, 0, 0),
+"times": PackedFloat32Array(0.4, 2.2)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Background:modulate")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.70000005, 1.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.72426915, 0.5125308, 0.6539521, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pda3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Letterbox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.365, 1.365)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Letterbox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letterbox:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:zoom:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:zoom:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Letterbox:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.68, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Background:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xc47r"]
+_data = {
+&"LetterboxCamein": SubResource("Animation_2w77h"),
+&"RESET": SubResource("Animation_pda3r")
+}
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_6u50l")
+
+[node name="Effect" type="CanvasLayer" parent="."]
+
+[node name="Noise" type="Control" parent="Effect"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shader" type="ColorRect" parent="Effect/Noise"]
+material = SubResource("ShaderMaterial_1bxpk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="InterviewPosition" type="Node2D" parent="."]
+position = Vector2(656, 405)
+script = ExtResource("3_gpa0p")
+
+[node name="Timer" type="Timer" parent="InterviewPosition"]
+unique_name_in_owner = true
+wait_time = 15.0
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("4_qi2v4")
+centered = false
+
+[node name="CameraNode" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+script = ExtResource("5_clc0s")
+
+[node name="animation" type="AnimationPlayer" parent="CameraNode"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_xc47r")
+}
+autoplay = "RESET"
+speed_scale = 1.5
+
+[node name="Letterbox" type="Sprite2D" parent="CameraNode"]
+scale = Vector2(1.365, 1.68)
+texture = ExtResource("6_mudb7")
+
+[node name="Desk" type="Node2D" parent="."]
+position = Vector2(318, 576)
+
+[node name="FolderButton" type="Button" parent="Desk"]
+z_index = 2
+offset_right = 634.0
+offset_bottom = 120.0

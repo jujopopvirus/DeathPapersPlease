@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bhgxgtscni5uu"]
+[gd_scene load_steps=32 format=3 uid="uid://bhgxgtscni5uu"]
 
 [ext_resource type="Texture2D" uid="uid://q72tvp122wnd" path="res://content/assets/texture/white-paper-texture.jpg" id="1_2mthh"]
 [ext_resource type="Script" uid="uid://6u2yfj807ekw" path="res://content/script/matching/scan_document.gd" id="1_dj4ld"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ci0xdwjtjctus" path="res://content/assets/texture/stamps/buttons/YesButton.png" id="10_w1pl7"]
 [ext_resource type="Texture2D" uid="uid://bdcp2jsaiu7ub" path="res://content/assets/texture/stamps/buttons/NoButton.png" id="11_o7dyb"]
 [ext_resource type="Texture2D" uid="uid://cbtdeas2pep2o" path="res://content/assets/texture/stamps/buttons/CloseButton.png" id="14_eq7cw"]
+[ext_resource type="FontFile" uid="uid://da71sroogknkh" path="res://content/assets/font/apple/AppleGaramond-Italic.ttf" id="15_c016m"]
 [ext_resource type="Texture2D" uid="uid://be5n13b6to1o4" path="res://content/assets/texture/stamps/buttons/FinalizeButton.png" id="15_i3dy8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1pl7"]
@@ -77,6 +78,7 @@ border_width_bottom = 3
 border_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
 
 [node name="Document" type="Node2D"]
+z_index = 2
 script = ExtResource("1_dj4ld")
 Heaven_Stamp = ExtResource("2_o7dyb")
 Hell_Stamp = ExtResource("3_eq7cw")
@@ -184,9 +186,9 @@ vertical_alignment = 1
 [node name="OccupationText" type="Label" parent="CanvasLayer/Paper/Paper/TextControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.03178484
+anchor_left = 0.014669927
 anchor_top = 0.036479466
-anchor_right = 0.03178484
+anchor_right = 0.014669927
 anchor_bottom = 0.036479466
 offset_left = 121.0
 offset_top = 109.0
@@ -234,13 +236,14 @@ text = "-----------"
 
 [node name="OCCUPATION_ItemList" type="ItemList" parent="CanvasLayer/Paper/Paper/TextControl/OccupationText"]
 unique_name_in_owner = true
+process_priority = 1
 visible = false
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = -47.0
-offset_top = 41.0
+offset_top = -129.0
 offset_right = 213.0
-offset_bottom = 356.0
+offset_bottom = 186.0
 theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
 theme_override_colors/font_hovered_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
 theme_override_colors/font_hovered_selected_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
@@ -268,9 +271,9 @@ item_9/text = "Zookeeper"
 [node name="CODText" type="Label" parent="CanvasLayer/Paper/Paper/TextControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.014669927
+anchor_left = 0.0073349634
 anchor_top = 0.0048487415
-anchor_right = 0.014669927
+anchor_right = 0.0073349634
 anchor_bottom = 0.0048487415
 offset_left = 103.0
 offset_top = 226.0
@@ -318,7 +321,9 @@ text = "-----------"
 
 [node name="COD_ItemList" type="ItemList" parent="CanvasLayer/Paper/Paper/TextControl/CODText"]
 unique_name_in_owner = true
-z_index = 1
+process_priority = 1
+visible = false
+z_index = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -326,9 +331,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -134.0
-offset_top = 23.5
+offset_top = -228.5
 offset_right = 126.0
-offset_bottom = 308.5
+offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
@@ -517,29 +522,123 @@ position = Vector2(67, 95)
 rotation = -0.18814689
 scale = Vector2(0.14224534, 0.13842583)
 
-[node name="ColorPallette" type="Sprite2D" parent="."]
-position = Vector2(1099, -408)
-texture = ExtResource("4_1igxf")
-
-[node name="CloseButton" type="TextureButton" parent="."]
+[node name="CloseButton" type="TextureButton" parent="CanvasLayer"]
 offset_left = 316.99997
 offset_top = 23.0
 offset_right = 1015.0
 offset_bottom = 721.0
 scale = Vector2(0.1, 0.1)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_eq7cw")
 texture_pressed = ExtResource("14_eq7cw")
 texture_hover = ExtResource("14_eq7cw")
 
-[node name="FinalizeButton" type="TextureButton" parent="."]
+[node name="FinalizeButton" type="TextureButton" parent="CanvasLayer"]
+unique_name_in_owner = true
 offset_left = 891.0
 offset_top = 629.99994
 offset_right = 1589.0
 offset_bottom = 1328.0
 scale = Vector2(0.1, 0.1)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("15_i3dy8")
 texture_pressed = ExtResource("15_i3dy8")
 texture_hover = ExtResource("15_i3dy8")
+
+[node name="FinalAnswerBackground" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21960784, 0.18431373, 0.1882353, 0.7764706)
+
+[node name="FinalAnswerButton" type="Control" parent="CanvasLayer/FinalAnswerBackground"]
+anchors_preset = 0
+offset_left = 435.0
+offset_top = 230.0
+offset_right = 844.0
+offset_bottom = 529.0
+
+[node name="AreYouSureLabel" type="Label" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.5
+offset_top = -104.5
+offset_right = 251.5
+offset_bottom = -25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65882355)
+theme_override_fonts/font = ExtResource("6_q37jd")
+theme_override_font_sizes/font_size = 82
+text = "ARE YOU SURE?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.5
+offset_top = -57.5
+offset_right = 251.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65882355)
+theme_override_fonts/font = ExtResource("15_c016m")
+theme_override_font_sizes/font_size = 32
+text = "This will be your final answer."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YesButton" type="Button" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = 9.5
+offset_right = -10.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_q37jd")
+text = "YES"
+
+[node name="NoButton" type="Button" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = 9.5
+offset_right = 89.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_q37jd")
+text = "NO
+"
+
+[node name="ColorPallette" type="Sprite2D" parent="."]
+position = Vector2(1099, -408)
+texture = ExtResource("4_1igxf")
 
 [connection signal="pressed" from="CanvasLayer/Paper/Paper/TextControl/OccupationText/OCCUPATION_ItemSelected" to="." method="_on_occupation_item_selected_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Paper/Paper/TextControl/OccupationText/OCCUPATION_ItemList" to="." method="_on_occupation_item_list_item_selected"]
@@ -547,3 +646,7 @@ texture_hover = ExtResource("15_i3dy8")
 [connection signal="item_selected" from="CanvasLayer/Paper/Paper/TextControl/CODText/COD_ItemList" to="." method="_on_cod_item_list_item_selected"]
 [connection signal="pressed" from="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HeavenButton" to="." method="_on_heaven_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HellButton" to="." method="_on_hell_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/FinalizeButton" to="." method="_on_finalize_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/FinalAnswerBackground/FinalAnswerButton/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/FinalAnswerBackground/FinalAnswerButton/NoButton" to="." method="_on_no_button_pressed"]
