@@ -5,9 +5,9 @@
 
 [node name="Ferdinand" instance=ExtResource("1_6m10o")]
 
-[node name="Character_Information_Resource" parent="." index="2"]
+[node name="Character_Information_Resource" parent="." index="3"]
 unique_name_in_owner = true
-character_name = "Ferdinand"
+character_name = "Ferdinand Mendoza"
 cause_of_death = "Vehicle"
 character_id = ExtResource("2_4cbs2")
 occupation = "Student"
