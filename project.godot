@@ -19,34 +19,51 @@ config/icon="uid://dmr6340p6l0s3"
 
 Theatre="*res://addons/Theatre/classes/Theatre.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-GlobalNode="*res://content/script/global_node.tscn"
 
 [dialogic]
 
 directories/dch_directory={
 "Aldrich": "res://content/dialogues/characters/testchar/Aldrich.dch",
+"Artist": "res://content/dialogues/characters/Artist/Artist.dch",
 "Charlie": "res://content/dialogues/characters/Charlie/Charlie.dch",
 "Ezekyle": "res://content/dialogues/characters/Ezekyle/Ezekyle.dch",
 "Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dch",
+"Glinda": "res://content/dialogues/characters/Glinda/Glinda.dch",
 "Grey Telon": "res://content/dialogues/characters/Grey Telon/Grey Telon.dch",
 "Jack": "res://content/dialogues/characters/Jack/Jack.dch",
 "Jessica": "res://content/dialogues/characters/Jessica/Jessica.dch",
+"Meet Loafer": "res://content/dialogues/characters/Meet Loafer/Meet Loafer.dch",
 "Ms Braid": "res://content/dialogues/characters/Ms. Braid/Ms Braid.dch",
 "character": "res://content/dialogues/characters/Ferdinand/character.dch",
 "character1": "res://content/dialogues/characters/Character1/character1.dch"
 }
 directories/dtl_directory={
 "AldrichTestDialogues": "res://content/dialogues/characters/testchar/AldrichTestDialogues.dtl",
+"Artist": "res://content/dialogues/characters/Artist/Artist.dtl",
+"Artist_Heaven": "res://content/dialogues/characters/Artist/Artist_Heaven.dtl",
+"Artist_Hell": "res://content/dialogues/characters/Artist/Artist_Hell.dtl",
 "Character1": "res://content/dialogues/characters/Character1/Character1.dtl",
 "Ezekyle": "res://content/dialogues/characters/Ezekyle/Ezekyle.dtl",
+"Ezekyle_Heaven": "res://content/dialogues/characters/Ezekyle/Ezekyle_Heaven.dtl",
+"Ezekyle_Hell": "res://content/dialogues/characters/Ezekyle/Ezekyle_Hell.dtl",
 "Ferdinand": "res://content/dialogues/characters/Ferdinand/Ferdinand.dtl",
 "FerdinandHeaven": "res://content/dialogues/characters/Ferdinand/FerdinandHeaven.dtl",
 "FerdinandHell": "res://content/dialogues/characters/Ferdinand/FerdinandHell.dtl",
+"Glinda": "res://content/dialogues/characters/Glinda/Glinda.dtl",
+"Glinda_Heaven": "res://content/dialogues/characters/Glinda/Glinda_Heaven.dtl",
+"Glinda_Hell": "res://content/dialogues/characters/Glinda/Glinda_Hell.dtl",
 "Grey Telon": "res://content/dialogues/characters/Grey Telon/Grey Telon.dtl",
 "GreyTelonHeaven": "res://content/dialogues/characters/Grey Telon/GreyTelonHeaven.dtl",
 "GreyTelonHell": "res://content/dialogues/characters/Grey Telon/GreyTelonHell.dtl",
 "Jack": "res://content/dialogues/characters/Jack/Jack.dtl",
+"Jack_Heaven": "res://content/dialogues/characters/Jack/Jack_Heaven.dtl",
+"Jack_Hell": "res://content/dialogues/characters/Jack/Jack_Hell.dtl",
 "Jessica": "res://content/dialogues/characters/Jessica/Jessica.dtl",
+"Jessica_Heaven": "res://content/dialogues/characters/Jessica/Jessica_Heaven.dtl",
+"Jessica_Hell": "res://content/dialogues/characters/Jessica/Jessica_Hell.dtl",
+"Meet Loafer": "res://content/dialogues/characters/Meet Loafer/Meet Loafer.dtl",
+"MeetLoafer_Heaven": "res://content/dialogues/characters/Meet Loafer/MeetLoafer_Heaven.dtl",
+"MeetLoafer_Hell": "res://content/dialogues/characters/Meet Loafer/MeetLoafer_Hell.dtl",
 "Ms Braid": "res://content/dialogues/characters/Ms. Braid/Ms Braid.dtl",
 "MsBraidHeaven": "res://content/dialogues/characters/Ms. Braid/MsBraidHeaven.dtl",
 "MsBraidHell": "res://content/dialogues/characters/Ms. Braid/MsBraidHell.dtl"

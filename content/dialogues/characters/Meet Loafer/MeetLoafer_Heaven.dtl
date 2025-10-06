@@ -1,0 +1,4 @@
+[wait time="2.0"]
+"Meet Loafer": I see, I wouldn't be able to venture again. But I hope my friends are safe from the beast that killed me. Thank you!
+[signal arg="Finish_Interview"]
+[end_timeline]

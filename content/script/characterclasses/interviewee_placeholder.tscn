@@ -1,236 +1,652 @@
-[gd_scene load_steps=20 format=3 uid="uid://dlpkxeks47vvp"]
+[gd_scene load_steps=32 format=3 uid="uid://dlpkxeks47vvp"]
 
-[ext_resource type="Script" uid="uid://cih5quwns1it1" path="res://content/script/characterclasses/interviewee_placeholder.gd" id="1_0vqdp"]
-[ext_resource type="Texture2D" uid="uid://d4b13ytwo4cdj" path="res://content/assets/texture/chars/Day01/RoadKillStudent/01.png" id="2_3sdjg"]
-[ext_resource type="Texture2D" uid="uid://c40mg47n3gqrm" path="res://content/assets/texture/chars/Day01/RoadKillStudent/02.png" id="3_rju0b"]
-[ext_resource type="Texture2D" uid="uid://dwqilstdm1upy" path="res://content/assets/texture/chars/Day01/RoadKillStudent/03.png" id="4_sufv6"]
-[ext_resource type="Shader" uid="uid://cedvid0d76g5y" path="res://content/assets/shaders/displacement.gdshader" id="5_3sdjg"]
-[ext_resource type="Texture2D" uid="uid://blvo0uj1viei3" path="res://content/assets/texture/chars/Day01/Zookeeper/ID.png" id="5_rju0b"]
-[ext_resource type="Script" uid="uid://e2fgfsoei5en" path="res://content/script/characterclasses/char_class.gd" id="6_3sdjg"]
+[ext_resource type="Script" uid="uid://6u2yfj807ekw" path="res://content/script/matching/scan_document.gd" id="1_14pkk"]
+[ext_resource type="Texture2D" uid="uid://dwcps3olmrtrt" path="res://content/assets/texture/stamps/HeavenStamp.png" id="2_uth4y"]
+[ext_resource type="Texture2D" uid="uid://cp8x8i7awp5eq" path="res://content/assets/texture/stamps/HellStamp.png" id="3_opbnl"]
+[ext_resource type="Texture2D" uid="uid://q72tvp122wnd" path="res://content/assets/texture/white-paper-texture.jpg" id="4_onee3"]
+[ext_resource type="FontFile" uid="uid://ovw540f2vgqg" path="res://content/assets/font/apple/AppleGaramond-Bold.ttf" id="5_gktso"]
+[ext_resource type="FontFile" uid="uid://cgvldtgs25lwb" path="res://content/assets/font/apple/AppleGaramond.ttf" id="6_owtdv"]
+[ext_resource type="FontFile" uid="uid://cbaee1dai3fnr" path="res://content/assets/font/greatlake/GreatLakesNF.ttf" id="7_dy5ax"]
+[ext_resource type="FontFile" uid="uid://oqqic3yplai3" path="res://content/assets/font/kastelvoire/KASTEL VOIRE OTF.otf" id="8_5d00w"]
+[ext_resource type="FontFile" uid="uid://bipnm33a28q40" path="res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf" id="9_4s0br"]
+[ext_resource type="Texture2D" uid="uid://bsw8ivuhhjbmg" path="res://content/assets/texture/stamps/TemplateStamp.png" id="10_ptlh0"]
+[ext_resource type="Texture2D" uid="uid://ci0xdwjtjctus" path="res://content/assets/texture/stamps/buttons/YesButton.png" id="11_aq80m"]
+[ext_resource type="Texture2D" uid="uid://bdcp2jsaiu7ub" path="res://content/assets/texture/stamps/buttons/NoButton.png" id="12_d5wnv"]
+[ext_resource type="Texture2D" uid="uid://cbtdeas2pep2o" path="res://content/assets/texture/stamps/buttons/CloseButton.png" id="13_5yrme"]
+[ext_resource type="Texture2D" uid="uid://be5n13b6to1o4" path="res://content/assets/texture/stamps/buttons/FinalizeButton.png" id="14_u1b23"]
+[ext_resource type="FontFile" uid="uid://da71sroogknkh" path="res://content/assets/font/apple/AppleGaramond-Italic.ttf" id="15_id362"]
+[ext_resource type="Texture2D" uid="uid://bv4f5ictu3ocb" path="res://content/assets/ColorPallette.png" id="16_nq1o8"]
 
-[sub_resource type="Animation" id="Animation_sufv6"]
-resource_name = "ID_Slide"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.2000003),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-76, -1502), Vector2(-76, 65)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.2000003),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.92430806]
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-76, 0, 0, 0.70000005, 0, -50, -0.25, 0, 0.355, 0),
-"times": PackedFloat32Array(0, 4.2000003)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-1502, 0, 0, 3.3657494, 2030.8464, 0, -0.36758423, -37.791462, 0.24271032, 24.95313),
-"times": PackedFloat32Array(0, 4.2000003)
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1pl7"]
 
-[sub_resource type="Animation" id="Animation_pktfx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-76, -1522.0001)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-76, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(65, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eq7cw"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxnoe"]
-_data = {
-&"ID_Slide": SubResource("Animation_sufv6"),
-&"RESET": SubResource("Animation_pktfx")
-}
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3dy8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt3ei"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3dy8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usd7p"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18rr5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w77h"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11lhs"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_bottom = 15.0
+bg_color = Color(0.9529412, 0.8980392, 0.7764706, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pda3r"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj4ld"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xc47r"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2uco"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pda3r"]
-shader = ExtResource("5_3sdjg")
-shader_parameter/interval = 0.4
-shader_parameter/timeDelay = 0.0
-shader_parameter/intensityX = 3.0
-shader_parameter/intensityY = 3.0
-shader_parameter/seed = 42.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q37jd"]
 
-[sub_resource type="Animation" id="Animation_xc47r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture_Body:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usaml"]
 
-[sub_resource type="Animation" id="Animation_pda3r"]
-resource_name = "breathing"
-length = 5.0
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture_Body:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -25), Vector2(0, 0)]
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7dyb"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bxpk"]
-_data = {
-&"RESET": SubResource("Animation_xc47r"),
-&"breathing": SubResource("Animation_pda3r")
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c016m"]
 
-[node name="Interviewee_Placeholder" type="Node2D"]
-script = ExtResource("1_0vqdp")
-Texture_Arrays = Array[Texture2D]([ExtResource("2_3sdjg"), ExtResource("3_rju0b"), ExtResource("4_sufv6")])
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wrqwg"]
 
-[node name="ID_Texture" type="Sprite2D" parent="."]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgt5k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1pl7"]
+bg_color = Color(0.21960784, 0.18431373, 0.1882353, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+
+[node name="Document" type="Node2D"]
+z_index = 2
+script = ExtResource("1_14pkk")
+Heaven_Stamp = ExtResource("2_uth4y")
+Hell_Stamp = ExtResource("3_opbnl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Paper" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 321.0
+offset_right = -309.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Paper" type="ColorRect" parent="CanvasLayer/Paper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 73.0
+offset_top = 24.0
+offset_right = -92.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.8901961, 0.6431373, 1)
+metadata/_edit_lock_ = true
+
+[node name="WhitePaperTexture" type="Sprite2D" parent="CanvasLayer/Paper/Paper"]
+modulate = Color(1, 1, 1, 0.49019608)
+position = Vector2(243.25403, 337.2646)
+rotation = 1.5707964
+scale = Vector2(0.33746415, 0.3660976)
+texture = ExtResource("4_onee3")
+metadata/_edit_lock_ = true
+
+[node name="Line" type="Line2D" parent="CanvasLayer/Paper/Paper"]
+position = Vector2(-462, 311)
+scale = Vector2(0.50762194, 0.5076233)
+points = PackedVector2Array(1063, 332, 1709, 332)
+width = 5.0
+default_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+
+[node name="Line2" type="Line2D" parent="CanvasLayer/Paper/Paper"]
+position = Vector2(-463, -50.99283)
+scale = Vector2(0.50762194, 0.5076233)
+points = PackedVector2Array(1063, 332, 1709, 332)
+width = 5.0
+default_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+
+[node name="TextControl" type="Control" parent="CanvasLayer/Paper/Paper"]
+layout_mode = 1
+anchor_left = 0.020618556
+anchor_top = 0.13038103
+anchor_right = 1.0
+anchor_bottom = 0.8696296
+offset_left = 27.0
+offset_top = 39.0
+offset_right = -39.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NameText" type="Label" parent="CanvasLayer/Paper/Paper/TextControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.036245797
+anchor_bottom = 0.036245797
+offset_left = 164.0
+offset_top = 13.0
+offset_right = 261.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_spacing = 7
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("5_gktso")
+theme_override_font_sizes/font_size = 32
+text = "NAME : "
+metadata/_edit_use_anchors_ = true
+
+[node name="NameInput" type="Label" parent="CanvasLayer/Paper/Paper/TextControl/NameText"]
 unique_name_in_owner = true
+layout_mode = 0
+offset_left = -111.0
+offset_top = 39.0
+offset_right = 195.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_constants/line_spacing = 7
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("6_owtdv")
+theme_override_font_sizes/font_size = 24
+text = "Unnamed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OccupationText" type="Label" parent="CanvasLayer/Paper/Paper/TextControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014669927
+anchor_top = 0.036479466
+anchor_right = 0.014669927
+anchor_bottom = 0.036479466
+offset_left = 121.0
+offset_top = 109.0
+offset_right = 294.0
+offset_bottom = 146.0
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_spacing = 7
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("5_gktso")
+theme_override_font_sizes/font_size = 32
+text = "Occupation :  "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="OCCUPATION_ItemSelected" type="Button" parent="CanvasLayer/Paper/Paper/TextControl/OccupationText"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.5
+offset_top = -1.9039612
+offset_right = 66.5
+offset_bottom = 34.09604
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_focus_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_pressed_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.35452226, 0.3036802, 0.3093015, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3529412, 0.3019608, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("6_owtdv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w1pl7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eq7cw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i3dy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i3dy8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_18rr5")
+text = "-----------"
+
+[node name="OCCUPATION_ItemList" type="ItemList" parent="CanvasLayer/Paper/Paper/TextControl/OccupationText"]
+unique_name_in_owner = true
+process_priority = 1
 visible = false
 z_index = 2
-position = Vector2(-76, 65)
-scale = Vector2(0.29555315, 0.29555315)
-texture = ExtResource("5_rju0b")
+layout_mode = 0
+offset_left = -47.0
+offset_top = -129.0
+offset_right = 213.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_hovered_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
+theme_override_colors/font_hovered_selected_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
+theme_override_colors/font_selected_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("5_gktso")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/panel = SubResource("StyleBoxFlat_11lhs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj4ld")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_t2uco")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_q37jd")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_usaml")
+item_count = 10
+icon_mode = 0
+item_0/text = "Artist"
+item_1/text = "Camper"
+item_2/text = "Farmer"
+item_3/text = "Grandmother"
+item_4/text = "Mother"
+item_5/text = "Student"
+item_6/text = "Stuntman"
+item_7/text = "Teacher"
+item_8/text = "Unemployed"
+item_9/text = "Zookeeper"
 
-[node name="SlideID" type="AnimationPlayer" parent="ID_Texture"]
-unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_nxnoe")
-}
-speed_scale = 4.0
-
-[node name="ButtonControl" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -174.0
-offset_top = -337.0
-offset_right = 157.0
-offset_bottom = 338.0
-
-[node name="Character_Button" type="Button" parent="ButtonControl"]
-z_index = 1
+[node name="CODText" type="Label" parent="CanvasLayer/Paper/Paper/TextControl"]
 layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0073349634
+anchor_top = 0.0048487415
+anchor_right = 0.0073349634
+anchor_bottom = 0.0048487415
+offset_left = 103.0
+offset_top = 226.0
+offset_right = 319.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_spacing = 7
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("5_gktso")
+theme_override_font_sizes/font_size = 32
+text = "Cause of Death :  "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="COD_ItemSelected" type="Button" parent="CanvasLayer/Paper/Paper/TextControl/CODText"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = 2.0
+offset_right = 73.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_focus_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_pressed_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.3529412, 0.3019608, 0.30980393, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3529412, 0.3019608, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("6_owtdv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o7dyb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_c016m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i3dy8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wrqwg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fgt5k")
+text = "-----------"
+
+[node name="COD_ItemList" type="ItemList" parent="CanvasLayer/Paper/Paper/TextControl/CODText"]
+unique_name_in_owner = true
+process_priority = 1
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -228.5
+offset_right = 126.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_colors/font_hovered_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
+theme_override_colors/font_hovered_selected_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
+theme_override_colors/font_selected_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("5_gktso")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/panel = SubResource("StyleBoxFlat_11lhs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj4ld")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_t2uco")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_q37jd")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_usaml")
+item_count = 9
+icon_mode = 0
+item_0/text = "Household Hazards"
+item_1/text = "Vehicle"
+item_2/text = "Individual / Murder"
+item_3/text = "Self Harm"
+item_4/text = "Cannibalism"
+item_5/text = "Poisoned"
+item_6/text = "Wild Animals"
+item_7/text = "Electricity"
+item_8/text = "Natural Disaster"
+
+[node name="Title" type="Label" parent="CanvasLayer/Paper/Paper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -301.5
+offset_right = 31.5
+offset_bottom = -266.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("7_dy5ax")
+theme_override_font_sizes/font_size = 24
+text = "DEATH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assistant" type="Label" parent="CanvasLayer/Paper/Paper/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.5
+offset_top = 14.5
+offset_right = 94.5
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("8_5d00w")
+theme_override_font_sizes/font_size = 42
+text = "ASSISTANT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Paper/Paper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 17.0
+offset_right = -15.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_w1pl7")
+
+[node name="FinalVerdict" type="Label" parent="CanvasLayer/Paper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = 150.0
+offset_right = 59.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("9_4s0br")
+theme_override_font_sizes/font_size = 24
+text = "FINAL VERDICT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TemplateStamp" type="TextureButton" parent="CanvasLayer/Paper/FinalVerdict"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 20.0
+offset_right = 2321.2366
+offset_bottom = 1100.0
+scale = Vector2(0.14224534, 0.13842583)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_ptlh0")
+texture_focused = ExtResource("10_ptlh0")
+
+[node name="Decision" type="Control" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -7.0301514
+offset_top = 50.568527
+offset_right = 2193.393
+offset_bottom = 1105.285
+
+[node name="HeavenButton" type="TextureButton" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision"]
+layout_mode = 0
+offset_left = 1954.3698
+offset_right = 2652.3696
+offset_bottom = 698.0
+scale = Vector2(0.6, 0.6)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_aq80m")
+texture_pressed = ExtResource("11_aq80m")
+texture_hover = ExtResource("11_aq80m")
+
+[node name="Text" type="Label" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HeavenButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.2832
+offset_top = -505.5219
+offset_right = -200.2832
+offset_bottom = -470.5219
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0.20965612, 0.76197946, 0.19769084, 1)
+theme_override_fonts/font = ExtResource("7_dy5ax")
+theme_override_font_sizes/font_size = 24
+text = "HEAVEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HellButton" type="TextureButton" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision"]
+layout_mode = 0
+offset_left = 1954.3698
+offset_top = 527.3582
+offset_right = 2652.3696
+offset_bottom = 1225.3582
+scale = Vector2(0.6, 0.6)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("12_d5wnv")
+texture_pressed = ExtResource("12_d5wnv")
+texture_hover = ExtResource("12_d5wnv")
+
+[node name="Text" type="Label" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HellButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.2832
+offset_top = -505.5219
+offset_right = -200.2832
+offset_bottom = -470.5219
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("7_dy5ax")
+theme_override_font_sizes/font_size = 24
+text = "HELL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalStamp" type="Sprite2D" parent="CanvasLayer/Paper/FinalVerdict"]
+unique_name_in_owner = true
+position = Vector2(67, 95)
+rotation = -0.18814689
+scale = Vector2(0.14224534, 0.13842583)
+
+[node name="CloseButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 316.99997
+offset_top = 23.0
+offset_right = 1015.0
+offset_bottom = 721.0
+scale = Vector2(0.1, 0.1)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_5yrme")
+texture_pressed = ExtResource("13_5yrme")
+texture_hover = ExtResource("13_5yrme")
+
+[node name="FinalizeButton" type="TextureButton" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 891.0
+offset_top = 629.99994
+offset_right = 1589.0
+offset_bottom = 1328.0
+scale = Vector2(0.1, 0.1)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_u1b23")
+texture_pressed = ExtResource("14_u1b23")
+texture_hover = ExtResource("14_u1b23")
+
+[node name="FinalAnswerBackground" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vt3ei")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_usd7p")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_2w77h")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_pda3r")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xc47r")
+color = Color(0.21960784, 0.18431373, 0.1882353, 0.7764706)
 
-[node name="Texture_Body" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-z_index = 1
-material = SubResource("ShaderMaterial_pda3r")
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_3sdjg")
+[node name="FinalAnswerButton" type="Control" parent="CanvasLayer/FinalAnswerBackground"]
+anchors_preset = 0
+offset_left = 435.0
+offset_top = 230.0
+offset_right = 844.0
+offset_bottom = 529.0
 
-[node name="TextureAnimation" type="AnimationPlayer" parent="Texture_Body"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_1bxpk")
-}
-autoplay = "breathing"
-speed_scale = 0.7
+[node name="AreYouSureLabel" type="Label" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.5
+offset_top = -104.5
+offset_right = 251.5
+offset_bottom = -25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65882355)
+theme_override_fonts/font = ExtResource("9_4s0br")
+theme_override_font_sizes/font_size = 82
+text = "ARE YOU SURE?"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Character_Information_Resource" type="Node" parent="."]
-script = ExtResource("6_3sdjg")
-HeavenTimeline = "Heaven"
-HellTimeline = "Hell"
-metadata/_custom_type_script = "uid://e2fgfsoei5en"
+[node name="Label2" type="Label" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.5
+offset_top = -57.5
+offset_right = 251.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65882355)
+theme_override_fonts/font = ExtResource("15_id362")
+theme_override_font_sizes/font_size = 32
+text = "This will be your final answer."
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="ButtonControl/Character_Button" to="." method="_on_character_button_pressed"]
+[node name="YesButton" type="Button" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = 9.5
+offset_right = -10.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_4s0br")
+text = "YES"
+
+[node name="NoButton" type="Button" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = 9.5
+offset_right = 89.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_4s0br")
+text = "NO
+"
+
+[node name="ColorPallette" type="Sprite2D" parent="."]
+position = Vector2(1099, -408)
+texture = ExtResource("16_nq1o8")
+
+[connection signal="pressed" from="CanvasLayer/Paper/Paper/TextControl/OccupationText/OCCUPATION_ItemSelected" to="." method="_on_occupation_item_selected_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Paper/Paper/TextControl/OccupationText/OCCUPATION_ItemList" to="." method="_on_occupation_item_list_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Paper/Paper/TextControl/CODText/COD_ItemSelected" to="." method="_on_cod_item_selected_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Paper/Paper/TextControl/CODText/COD_ItemList" to="." method="_on_cod_item_list_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HeavenButton" to="." method="_on_heaven_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HellButton" to="." method="_on_hell_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/FinalizeButton" to="." method="_on_finalize_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/FinalAnswerBackground/FinalAnswerButton/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/FinalAnswerBackground/FinalAnswerButton/NoButton" to="." method="_on_no_button_pressed"]
