@@ -1,652 +1,340 @@
-[gd_scene load_steps=32 format=3 uid="uid://csnwq2mcatr0"]
+[gd_scene load_steps=12 format=3 uid="uid://csnwq2mcatr0"]
 
-[ext_resource type="Script" uid="uid://6u2yfj807ekw" path="res://content/script/matching/scan_document.gd" id="1_gkasl"]
-[ext_resource type="Texture2D" uid="uid://dwcps3olmrtrt" path="res://content/assets/texture/stamps/HeavenStamp.png" id="2_er658"]
-[ext_resource type="Texture2D" uid="uid://cp8x8i7awp5eq" path="res://content/assets/texture/stamps/HellStamp.png" id="3_hgdd3"]
-[ext_resource type="Texture2D" uid="uid://q72tvp122wnd" path="res://content/assets/texture/white-paper-texture.jpg" id="4_g0wre"]
-[ext_resource type="FontFile" uid="uid://ovw540f2vgqg" path="res://content/assets/font/apple/AppleGaramond-Bold.ttf" id="5_toxhl"]
-[ext_resource type="FontFile" uid="uid://cgvldtgs25lwb" path="res://content/assets/font/apple/AppleGaramond.ttf" id="6_47fcv"]
-[ext_resource type="FontFile" uid="uid://cbaee1dai3fnr" path="res://content/assets/font/greatlake/GreatLakesNF.ttf" id="7_cjnil"]
-[ext_resource type="FontFile" uid="uid://oqqic3yplai3" path="res://content/assets/font/kastelvoire/KASTEL VOIRE OTF.otf" id="8_gn7kt"]
-[ext_resource type="FontFile" uid="uid://bipnm33a28q40" path="res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf" id="9_w21lq"]
-[ext_resource type="Texture2D" uid="uid://bsw8ivuhhjbmg" path="res://content/assets/texture/stamps/TemplateStamp.png" id="10_jldxg"]
-[ext_resource type="Texture2D" uid="uid://ci0xdwjtjctus" path="res://content/assets/texture/stamps/buttons/YesButton.png" id="11_32rgs"]
-[ext_resource type="Texture2D" uid="uid://bdcp2jsaiu7ub" path="res://content/assets/texture/stamps/buttons/NoButton.png" id="12_2qilu"]
-[ext_resource type="Texture2D" uid="uid://cbtdeas2pep2o" path="res://content/assets/texture/stamps/buttons/CloseButton.png" id="13_0ft5m"]
-[ext_resource type="Texture2D" uid="uid://be5n13b6to1o4" path="res://content/assets/texture/stamps/buttons/FinalizeButton.png" id="14_jwtar"]
-[ext_resource type="FontFile" uid="uid://da71sroogknkh" path="res://content/assets/font/apple/AppleGaramond-Italic.ttf" id="15_umg28"]
-[ext_resource type="Texture2D" uid="uid://bv4f5ictu3ocb" path="res://content/assets/ColorPallette.png" id="16_jty2p"]
+[ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_pvyka"]
+[ext_resource type="Shader" uid="uid://bmqvfjeiexaqr" path="res://content/assets/shaders/noise.gdshader" id="2_77t5d"]
+[ext_resource type="Texture2D" uid="uid://kv08k7uptybd" path="res://content/assets/texture/background/DraftBackground.jpg" id="2_xc47r"]
+[ext_resource type="PackedScene" uid="uid://k3fb5yfhkbxe" path="res://content/dialogues/characters/Ferdinand/Ferdinand.tscn" id="4_o3j8k"]
+[ext_resource type="Script" uid="uid://dbmux4ayes67o" path="res://content/script/cameraanimation.gd" id="4_pda3r"]
+[ext_resource type="Texture2D" uid="uid://casp1xv46fd6l" path="res://content/assets/texture/background/Letterbox.png" id="5_pda3r"]
+[ext_resource type="Script" uid="uid://d0m1rovrp5cn6" path="res://content/script/desk.gd" id="9_iuuh5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1pl7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bxpk"]
+shader = ExtResource("2_77t5d")
+shader_parameter/strength = 19.99999955296
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eq7cw"]
+[sub_resource type="Animation" id="Animation_2w77h"]
+resource_name = "LetterboxCamein"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4652001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Letterbox:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.602), Vector2(0.835, 0.775)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Letterbox:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3999999, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letterbox:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.40999988, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:zoom:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -1.0985334, -0.0006123781, 0, 0),
+"times": PackedFloat32Array(0, 1.4652001)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:zoom:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -1.0652001, 0.0024496317, 0, 0),
+"times": PackedFloat32Array(0, 1.4652001)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Letterbox:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 1.7333335, 0.009640217, 0.845, -0.9666667, 0.059996247, 0, 0),
+"times": PackedFloat32Array(0.4, 2.2)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Background:modulate")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.70000005, 1.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.72426915, 0.5125308, 0.6539521, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Desk:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5082042, 0.50932384, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-322, 368), Vector2(-322, 197), Vector2(-326, 360)]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Desk:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-322, -0.25, 0, 0.25, 0, -326, -0.28177938, 0.6666667, 0, 0),
+"times": PackedFloat32Array(0.50932384, 2.2)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Desk:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(197, -0.24451767, 22.394928, 0.82400954, -75.46953, 360, -1.3666668, 1.6004639, 0, 0),
+"times": PackedFloat32Array(0.50932384, 2.2)
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3dy8"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="Animation" id="Animation_pda3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Letterbox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.365, 1.365)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Letterbox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letterbox:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:zoom:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:zoom:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Letterbox:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.68, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Background:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Desk:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-322, 197)]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Desk:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-322, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Desk:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(197, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3dy8"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xc47r"]
+_data = {
+&"LetterboxCamein": SubResource("Animation_2w77h"),
+&"RESET": SubResource("Animation_pda3r")
+}
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18rr5"]
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_pvyka")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11lhs"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_bottom = 15.0
-bg_color = Color(0.9529412, 0.8980392, 0.7764706, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 20
+[node name="Effect" type="CanvasLayer" parent="."]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj4ld"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2uco"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q37jd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usaml"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7dyb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c016m"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wrqwg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgt5k"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1pl7"]
-bg_color = Color(0.21960784, 0.18431373, 0.1882353, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-
-[node name="Document" type="Node2D"]
-z_index = 2
-script = ExtResource("1_gkasl")
-Heaven_Stamp = ExtResource("2_er658")
-Hell_Stamp = ExtResource("3_hgdd3")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Paper" type="Control" parent="CanvasLayer"]
+[node name="Noise" type="Control" parent="Effect"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 321.0
-offset_right = -309.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
+mouse_filter = 2
 
-[node name="Paper" type="ColorRect" parent="CanvasLayer/Paper"]
+[node name="Shader" type="ColorRect" parent="Effect/Noise"]
+material = SubResource("ShaderMaterial_1bxpk")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 73.0
-offset_top = 24.0
-offset_right = -92.0
-offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.8901961, 0.6431373, 1)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="WhitePaperTexture" type="Sprite2D" parent="CanvasLayer/Paper/Paper"]
-modulate = Color(1, 1, 1, 0.49019608)
-position = Vector2(243.25403, 337.2646)
-rotation = 1.5707964
-scale = Vector2(0.33746415, 0.3660976)
-texture = ExtResource("4_g0wre")
-metadata/_edit_lock_ = true
+[node name="Ferdinand" parent="." instance=ExtResource("4_o3j8k")]
+position = Vector2(634, 405)
 
-[node name="Line" type="Line2D" parent="CanvasLayer/Paper/Paper"]
-position = Vector2(-462, 311)
-scale = Vector2(0.50762194, 0.5076233)
-points = PackedVector2Array(1063, 332, 1709, 332)
-width = 5.0
-default_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_xc47r")
+centered = false
 
-[node name="Line2" type="Line2D" parent="CanvasLayer/Paper/Paper"]
-position = Vector2(-463, -50.99283)
-scale = Vector2(0.50762194, 0.5076233)
-points = PackedVector2Array(1063, 332, 1709, 332)
-width = 5.0
-default_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
+[node name="CameraNode" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+script = ExtResource("4_pda3r")
 
-[node name="TextControl" type="Control" parent="CanvasLayer/Paper/Paper"]
-layout_mode = 1
-anchor_left = 0.020618556
-anchor_top = 0.13038103
-anchor_right = 1.0
-anchor_bottom = 0.8696296
-offset_left = 27.0
-offset_top = 39.0
-offset_right = -39.0
-offset_bottom = -49.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+[node name="Desk" type="Node2D" parent="CameraNode"]
+position = Vector2(-322, 197)
+script = ExtResource("9_iuuh5")
 
-[node name="NameText" type="Label" parent="CanvasLayer/Paper/Paper/TextControl"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.036245797
-anchor_bottom = 0.036245797
-offset_left = 164.0
-offset_top = 13.0
-offset_right = 261.0
-offset_bottom = 50.0
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
-theme_override_constants/line_spacing = 7
-theme_override_constants/paragraph_spacing = 0
-theme_override_fonts/font = ExtResource("5_toxhl")
-theme_override_font_sizes/font_size = 32
-text = "NAME : "
-metadata/_edit_use_anchors_ = true
-
-[node name="NameInput" type="Label" parent="CanvasLayer/Paper/Paper/TextControl/NameText"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -111.0
-offset_top = 39.0
-offset_right = 195.0
-offset_bottom = 67.0
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_constants/line_spacing = 7
-theme_override_constants/paragraph_spacing = 0
-theme_override_fonts/font = ExtResource("6_47fcv")
-theme_override_font_sizes/font_size = 24
-text = "Unnamed"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OccupationText" type="Label" parent="CanvasLayer/Paper/Paper/TextControl"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.014669927
-anchor_top = 0.036479466
-anchor_right = 0.014669927
-anchor_bottom = 0.036479466
-offset_left = 121.0
-offset_top = 109.0
-offset_right = 294.0
-offset_bottom = 146.0
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
-theme_override_constants/line_spacing = 7
-theme_override_constants/paragraph_spacing = 0
-theme_override_fonts/font = ExtResource("5_toxhl")
-theme_override_font_sizes/font_size = 32
-text = "Occupation :  "
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="OCCUPATION_ItemSelected" type="Button" parent="CanvasLayer/Paper/Paper/TextControl/OccupationText"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -88.5
-offset_top = -1.9039612
-offset_right = 66.5
-offset_bottom = 34.09604
-grow_horizontal = 2
-grow_vertical = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_focus_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_pressed_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
-theme_override_colors/font_hover_color = Color(0.35452226, 0.3036802, 0.3093015, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.3529412, 0.3019608, 0.30980393, 1)
-theme_override_fonts/font = ExtResource("6_47fcv")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_w1pl7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_eq7cw")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i3dy8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_i3dy8")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_18rr5")
-text = "-----------"
-
-[node name="OCCUPATION_ItemList" type="ItemList" parent="CanvasLayer/Paper/Paper/TextControl/OccupationText"]
-unique_name_in_owner = true
-process_priority = 1
-visible = false
+[node name="FolderButton" type="Button" parent="CameraNode/Desk"]
 z_index = 2
-layout_mode = 0
-offset_left = -47.0
-offset_top = -129.0
-offset_right = 213.0
-offset_bottom = 186.0
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_hovered_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
-theme_override_colors/font_hovered_selected_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
-theme_override_colors/font_selected_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
-theme_override_fonts/font = ExtResource("5_toxhl")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/panel = SubResource("StyleBoxFlat_11lhs")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj4ld")
-theme_override_styles/hovered = SubResource("StyleBoxEmpty_t2uco")
-theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_q37jd")
-theme_override_styles/cursor = SubResource("StyleBoxEmpty_usaml")
-item_count = 10
-icon_mode = 0
-item_0/text = "Artist"
-item_1/text = "Camper"
-item_2/text = "Farmer"
-item_3/text = "Grandmother"
-item_4/text = "Mother"
-item_5/text = "Student"
-item_6/text = "Stuntman"
-item_7/text = "Teacher"
-item_8/text = "Unemployed"
-item_9/text = "Zookeeper"
+offset_right = 634.0
+offset_bottom = 120.0
 
-[node name="CODText" type="Label" parent="CanvasLayer/Paper/Paper/TextControl"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0073349634
-anchor_top = 0.0048487415
-anchor_right = 0.0073349634
-anchor_bottom = 0.0048487415
-offset_left = 103.0
-offset_top = 226.0
-offset_right = 319.0
-offset_bottom = 263.0
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
-theme_override_constants/line_spacing = 7
-theme_override_constants/paragraph_spacing = 0
-theme_override_fonts/font = ExtResource("5_toxhl")
-theme_override_font_sizes/font_size = 32
-text = "Cause of Death :  "
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="COD_ItemSelected" type="Button" parent="CanvasLayer/Paper/Paper/TextControl/CODText"]
+[node name="animation" type="AnimationPlayer" parent="CameraNode"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = 2.0
-offset_right = 73.0
-offset_bottom = 38.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_focus_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_pressed_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3019608, 0.30980393, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.3529412, 0.3019608, 0.30980393, 1)
-theme_override_fonts/font = ExtResource("6_47fcv")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_o7dyb")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_c016m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i3dy8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_wrqwg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_fgt5k")
-text = "-----------"
+libraries = {
+&"": SubResource("AnimationLibrary_xc47r")
+}
+autoplay = "RESET"
+speed_scale = 1.5
 
-[node name="COD_ItemList" type="ItemList" parent="CanvasLayer/Paper/Paper/TextControl/CODText"]
-unique_name_in_owner = true
-process_priority = 1
-visible = false
-z_index = 2
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -228.5
-offset_right = 126.0
-offset_bottom = 56.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_colors/font_hovered_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
-theme_override_colors/font_hovered_selected_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
-theme_override_colors/font_selected_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
-theme_override_fonts/font = ExtResource("5_toxhl")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/panel = SubResource("StyleBoxFlat_11lhs")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj4ld")
-theme_override_styles/hovered = SubResource("StyleBoxEmpty_t2uco")
-theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_q37jd")
-theme_override_styles/cursor = SubResource("StyleBoxEmpty_usaml")
-item_count = 9
-icon_mode = 0
-item_0/text = "Household Hazards"
-item_1/text = "Vehicle"
-item_2/text = "Individual / Murder"
-item_3/text = "Self Harm"
-item_4/text = "Cannibalism"
-item_5/text = "Poisoned"
-item_6/text = "Wild Animals"
-item_7/text = "Electricity"
-item_8/text = "Natural Disaster"
+[node name="Letterbox" type="Sprite2D" parent="CameraNode"]
+scale = Vector2(1.365, 1.68)
+texture = ExtResource("5_pda3r")
 
-[node name="Title" type="Label" parent="CanvasLayer/Paper/Paper"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.5
-offset_top = -301.5
-offset_right = 31.5
-offset_bottom = -266.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
-theme_override_fonts/font = ExtResource("7_cjnil")
-theme_override_font_sizes/font_size = 24
-text = "DEATH"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Assistant" type="Label" parent="CanvasLayer/Paper/Paper/Title"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -93.5
-offset_top = 14.5
-offset_right = 94.5
-offset_bottom = 55.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("8_gn7kt")
-theme_override_font_sizes/font_size = 42
-text = "ASSISTANT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/Paper/Paper"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 17.0
-offset_right = -15.0
-offset_bottom = -21.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_w1pl7")
-
-[node name="FinalVerdict" type="Label" parent="CanvasLayer/Paper"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = 150.0
-offset_right = 59.0
-offset_bottom = 185.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
-theme_override_fonts/font = ExtResource("9_w21lq")
-theme_override_font_sizes/font_size = 24
-text = "FINAL VERDICT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TemplateStamp" type="TextureButton" parent="CanvasLayer/Paper/FinalVerdict"]
-layout_mode = 0
-offset_left = -69.0
-offset_top = 20.0
-offset_right = 2321.2366
-offset_bottom = 1100.0
-scale = Vector2(0.14224534, 0.13842583)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("10_jldxg")
-texture_focused = ExtResource("10_jldxg")
-
-[node name="Decision" type="Control" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp"]
-unique_name_in_owner = true
-anchors_preset = 0
-offset_left = -7.0301514
-offset_top = 50.568527
-offset_right = 2193.393
-offset_bottom = 1105.285
-
-[node name="HeavenButton" type="TextureButton" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision"]
-layout_mode = 0
-offset_left = 1954.3698
-offset_right = 2652.3696
-offset_bottom = 698.0
-scale = Vector2(0.6, 0.6)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("11_32rgs")
-texture_pressed = ExtResource("11_32rgs")
-texture_hover = ExtResource("11_32rgs")
-
-[node name="Text" type="Label" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HeavenButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -337.2832
-offset_top = -505.5219
-offset_right = -200.2832
-offset_bottom = -470.5219
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5, 5)
-theme_override_colors/font_color = Color(0.20965612, 0.76197946, 0.19769084, 1)
-theme_override_fonts/font = ExtResource("7_cjnil")
-theme_override_font_sizes/font_size = 24
-text = "HEAVEN"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HellButton" type="TextureButton" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision"]
-layout_mode = 0
-offset_left = 1954.3698
-offset_top = 527.3582
-offset_right = 2652.3696
-offset_bottom = 1225.3582
-scale = Vector2(0.6, 0.6)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("12_2qilu")
-texture_pressed = ExtResource("12_2qilu")
-texture_hover = ExtResource("12_2qilu")
-
-[node name="Text" type="Label" parent="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HellButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -337.2832
-offset_top = -505.5219
-offset_right = -200.2832
-offset_bottom = -470.5219
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5, 5)
-theme_override_colors/font_color = Color(0.8627451, 0.2784314, 0.3137255, 1)
-theme_override_fonts/font = ExtResource("7_cjnil")
-theme_override_font_sizes/font_size = 24
-text = "HELL"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FinalStamp" type="Sprite2D" parent="CanvasLayer/Paper/FinalVerdict"]
-unique_name_in_owner = true
-position = Vector2(67, 95)
-rotation = -0.18814689
-scale = Vector2(0.14224534, 0.13842583)
-
-[node name="CloseButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 316.99997
-offset_top = 23.0
-offset_right = 1015.0
-offset_bottom = 721.0
-scale = Vector2(0.1, 0.1)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("13_0ft5m")
-texture_pressed = ExtResource("13_0ft5m")
-texture_hover = ExtResource("13_0ft5m")
-
-[node name="FinalizeButton" type="TextureButton" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 891.0
-offset_top = 629.99994
-offset_right = 1589.0
-offset_bottom = 1328.0
-scale = Vector2(0.1, 0.1)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("14_jwtar")
-texture_pressed = ExtResource("14_jwtar")
-texture_hover = ExtResource("14_jwtar")
-
-[node name="FinalAnswerBackground" type="ColorRect" parent="CanvasLayer"]
-unique_name_in_owner = true
-visible = false
-z_index = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.21960784, 0.18431373, 0.1882353, 0.7764706)
-
-[node name="FinalAnswerButton" type="Control" parent="CanvasLayer/FinalAnswerBackground"]
-anchors_preset = 0
-offset_left = 435.0
-offset_top = 230.0
-offset_right = 844.0
-offset_bottom = 529.0
-
-[node name="AreYouSureLabel" type="Label" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -257.5
-offset_top = -104.5
-offset_right = 251.5
-offset_bottom = -25.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65882355)
-theme_override_fonts/font = ExtResource("9_w21lq")
-theme_override_font_sizes/font_size = 82
-text = "ARE YOU SURE?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -257.5
-offset_top = -57.5
-offset_right = 251.5
-offset_bottom = 21.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65882355)
-theme_override_fonts/font = ExtResource("15_umg28")
-theme_override_font_sizes/font_size = 32
-text = "This will be your final answer."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="YesButton" type="Button" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -103.5
-offset_top = 9.5
-offset_right = -10.5
-offset_bottom = 42.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_w21lq")
-text = "YES"
-
-[node name="NoButton" type="Button" parent="CanvasLayer/FinalAnswerBackground/FinalAnswerButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -3.5
-offset_top = 9.5
-offset_right = 89.5
-offset_bottom = 42.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_w21lq")
-text = "NO
-"
-
-[node name="ColorPallette" type="Sprite2D" parent="."]
-position = Vector2(1099, -408)
-texture = ExtResource("16_jty2p")
-
-[connection signal="pressed" from="CanvasLayer/Paper/Paper/TextControl/OccupationText/OCCUPATION_ItemSelected" to="." method="_on_occupation_item_selected_pressed"]
-[connection signal="item_selected" from="CanvasLayer/Paper/Paper/TextControl/OccupationText/OCCUPATION_ItemList" to="." method="_on_occupation_item_list_item_selected"]
-[connection signal="pressed" from="CanvasLayer/Paper/Paper/TextControl/CODText/COD_ItemSelected" to="." method="_on_cod_item_selected_pressed"]
-[connection signal="item_selected" from="CanvasLayer/Paper/Paper/TextControl/CODText/COD_ItemList" to="." method="_on_cod_item_list_item_selected"]
-[connection signal="pressed" from="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HeavenButton" to="." method="_on_heaven_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Paper/FinalVerdict/TemplateStamp/Decision/HellButton" to="." method="_on_hell_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/FinalizeButton" to="." method="_on_finalize_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/FinalAnswerBackground/FinalAnswerButton/YesButton" to="." method="_on_yes_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/FinalAnswerBackground/FinalAnswerButton/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="CameraNode/Desk/FolderButton" to="CameraNode/Desk" method="_on_folder_button_pressed"]
