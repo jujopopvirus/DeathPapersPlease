@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4eysqi48jifr"
+path="res://.godot/imported/Jazz Music #9 (No Copyright).mp3-739d2adedca7291b24dde658c2b12ec8.mp3str"
+
+[deps]
+
+source_file="res://content/assets/sounds/BGM/Main menu/Jazz Music #9 (No Copyright).mp3"
+dest_files=["res://.godot/imported/Jazz Music #9 (No Copyright).mp3-739d2adedca7291b24dde658c2b12ec8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

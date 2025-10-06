@@ -1,19 +1,20 @@
 [wait time="2.0"]
-Charlie:  HAHAHAHAHAHA!!! WASSUP LADY!!!
+Charlie: HAHAHAHAHAHA!!! WASSUP LADY!!!
 Glinda: I couldn’t believe I’m already dead!! HAHAHAHAHAHA
 Glinda: I mean does this look like a hospital? Also there are no people around here so I guess I'm already dead as hell!!
 Charlie: Ok then please take a seat, I have some questions for you.
 label Choices
+[signal arg="ID_HIDE"]
 - Can you show me your ID?
 	Glinda: I have my license with me! You know, in case the police come chasing me again HAHA!
-	[signal arg="ID"]
-	[wait time="2.0"]
+	[signal arg="ID_SHOW"]
+	[wait time="5.0"]
 - What is your Occupation
-	Glinda:  My occupation? I’m a mechanic!
-	Glinda:  Now that I mentioned it, it’s kinda sad I gotta leave my babies behind.
+	Glinda: My occupation? I’m a mechanic!
+	Glinda: Now that I mentioned it, it’s kinda sad I gotta leave my babies behind.
 	Glinda: My tools and my stuff… If someone touches my babies they will perish… BY ME!
 - What was the last thing you remember?
-	Glinda: and HAHA I FOUGHT A CROCODILE!!!!! 
+	Glinda: and HAHA I FOUGHT A CROCODILE!!!!!
 - (End Coversation)
 	[end_timeline]
 jump Choices

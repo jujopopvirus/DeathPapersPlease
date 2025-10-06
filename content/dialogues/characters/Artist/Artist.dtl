@@ -1,18 +1,25 @@
 [wait time="1.0"]
 …
 Hello…?
+[wait time="3.0"]
+[signal arg="emotion_02"]
+[wait time="5.0"]
 label Choices
+[signal arg="emotion_02"]
 - Can you show me your ID?
 	Artist: …
 	[signal]
 	[wait time="2.0"]
 - What is your Occupation?
 	Artist: You have good flesh, your smooth… and fleshy skin is all I need for my last work… my final artwork…
+	[signal arg="emotion_03"]
 	Artist: I poured all of it, all my skin, all of my soul to my beautiful ‘Starry Night’ and I wish the world would see my last flair.
 - What was the last thing you remember?
 	Artist: The last thing I remember is pouring my blood and soul into my crafts.
-	Artist:  Of course, I do accept the help of others. The unity of skins and red ink does make a beautiful harmony of chaos and humanity…
-	Artist:  Ahhhhhh I love art so much.
+	Artist: Of course, I do accept the help of others. The unity of skins and red ink does make a beautiful harmony of chaos and humanity…
+	[signal arg="emotion_03"]
+	Artist: Ahhhhhh I love art so much.
 - (End Conversation)
 	[end_timeline]
+[signal arg="emotion_02"]
 jump Choices

@@ -5,13 +5,14 @@ Charlie: Hi nice to meet you! So your name is… Jack?
 Jack: …
 Charlie: This is gonna go great...
 label Choices
+[signal arg="ID_HIDE"]
 - Can you show me your ID?
 	Jack: ...
 	Jack take out his passport ID
-	[signal arg="ID"]
-	[wait time="2.0"]
+	[signal arg="ID_SHOW"]
+	[wait time="5.0"]
 - What is your Occupation?
-	 (Jack is showing a raking gesture, after that he did a motion that looks like he’s harvesting something.)
+	(Jack is showing a raking gesture, after that he did a motion that looks like he’s harvesting something.)
 - What was the last thing you remember?
 	(Jack was thinking... )
 	(He was gesturing something like a cylinder, maybe something got spilled over?)

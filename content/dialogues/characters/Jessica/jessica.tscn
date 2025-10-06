@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmad10f4rxrkb"]
+
+[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="1_8ukq4"]
+[ext_resource type="Texture2D" uid="uid://cwofi82hokv8a" path="res://content/assets/texture/chars/Day02/Mother/1.png" id="2_yacvw"]
+[ext_resource type="Texture2D" uid="uid://dmx8i0kwyu263" path="res://content/assets/texture/chars/Day02/Mother/2.png" id="3_mw1ip"]
+[ext_resource type="Texture2D" uid="uid://ddxrd4orpkwjh" path="res://content/assets/texture/chars/Day02/Mother/3.png" id="4_lknei"]
+[ext_resource type="Texture2D" uid="uid://bmr5w7x37oelj" path="res://content/assets/texture/chars/Day02/Mother/ID.png" id="5_c7cmd"]
+
+[node name="Jessica" instance=ExtResource("1_8ukq4")]
+Texture_Arrays = Array[Texture2D]([ExtResource("2_yacvw"), ExtResource("3_mw1ip"), ExtResource("4_lknei")])
+
+[node name="Character_Information_Resource" parent="." index="3"]
+character_name = "Jessica Graham"
+cause_of_death = "Individual / Murder"
+character_id = ExtResource("5_c7cmd")
+occupation = "Mother"
+final_verdict = "Heaven"
+Dialogue_Timeline = "Jessica"
+HeavenTimeline = "Jesicca_Heaven"
+HellTimeline = "Jesicca_Hell"

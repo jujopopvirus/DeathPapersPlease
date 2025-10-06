@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cau88uwjbjenw"]
+
+[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="1_44oem"]
+[ext_resource type="Texture2D" uid="uid://7klxbrhv5ll0" path="res://content/assets/texture/chars/Day03/StuntGirl/1.png" id="2_l83d6"]
+[ext_resource type="Texture2D" uid="uid://dwj0kh7as6tha" path="res://content/assets/texture/chars/Day03/StuntGirl/ID.png" id="3_ngfbe"]
+
+[node name="Glinda" instance=ExtResource("1_44oem")]
+Texture_Arrays = Array[Texture2D]([ExtResource("2_l83d6")])
+
+[node name="Character_Information_Resource" parent="." index="3"]
+character_name = "Glinda Taurus"
+cause_of_death = "Extreme Stunts"
+character_id = ExtResource("3_ngfbe")
+occupation = "Mechanic"
+final_verdict = "Hell"
+Dialogue_Timeline = "Glinda"
+HeavenTimeline = "Glinda_Heaven"
+HellTimeline = "Glinda_Hell"

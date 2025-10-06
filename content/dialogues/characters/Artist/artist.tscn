@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://20tpn4n3i4gq"]
+
+[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="1_y1yeb"]
+[ext_resource type="Texture2D" uid="uid://cgvpqjsrcx051" path="res://content/assets/texture/chars/Day03/Artist/1.png" id="2_tu482"]
+[ext_resource type="Texture2D" uid="uid://g6wpbjecelsy" path="res://content/assets/texture/chars/Day03/Artist/2.png" id="3_1puyb"]
+[ext_resource type="Texture2D" uid="uid://cilbapesklxnj" path="res://content/assets/texture/chars/Day03/Artist/3.png" id="4_1m400"]
+[ext_resource type="Texture2D" uid="uid://bmr5w7x37oelj" path="res://content/assets/texture/chars/Day02/Mother/ID.png" id="5_7dvio"]
+
+[node name="Artist" instance=ExtResource("1_y1yeb")]
+Texture_Arrays = Array[Texture2D]([ExtResource("2_tu482"), ExtResource("3_1puyb"), ExtResource("4_1m400")])
+
+[node name="Texture_Body" parent="." index="2"]
+texture = ExtResource("3_1puyb")
+
+[node name="Character_Information_Resource" parent="." index="3"]
+cause_of_death = "Self Harm"
+character_id = ExtResource("5_7dvio")
+occupation = "Artist"
+final_verdict = "Hell"
+Dialogue_Timeline = "Artist"
+HeavenTimeline = "Artist_Heaven"
+HellTimeline = "Artist_Hell"

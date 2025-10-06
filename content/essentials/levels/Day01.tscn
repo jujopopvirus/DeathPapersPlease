@@ -1,22 +1,76 @@
-[gd_scene load_steps=23 format=3 uid="uid://s84xkw5p7voj"]
+[gd_scene load_steps=30 format=3 uid="uid://s84xkw5p7voj"]
 
 [ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_6u50l"]
 [ext_resource type="Shader" uid="uid://bmqvfjeiexaqr" path="res://content/assets/shaders/noise.gdshader" id="2_7xg0s"]
 [ext_resource type="Script" uid="uid://v4oj42146toq" path="res://content/script/matching/interview_position.gd" id="3_gpa0p"]
+[ext_resource type="Texture2D" uid="uid://c8px28ndpetmy" path="res://content/assets/texture/background/Chair.png" id="3_t885a"]
 [ext_resource type="PackedScene" uid="uid://k3fb5yfhkbxe" path="res://content/dialogues/characters/Ferdinand/Ferdinand.tscn" id="4_7xg0s"]
-[ext_resource type="Texture2D" uid="uid://kv08k7uptybd" path="res://content/assets/texture/background/DraftBackground.jpg" id="4_qi2v4"]
 [ext_resource type="Script" uid="uid://dbmux4ayes67o" path="res://content/script/cameraanimation.gd" id="5_clc0s"]
 [ext_resource type="PackedScene" uid="uid://b2qpw5hpor56e" path="res://content/dialogues/characters/Grey Telon/grey_telon.tscn" id="5_qi2v4"]
 [ext_resource type="PackedScene" uid="uid://7xwah2bx5ag0" path="res://content/dialogues/characters/Ms. Braid/Ms_Braid.tscn" id="6_clc0s"]
 [ext_resource type="Texture2D" uid="uid://casp1xv46fd6l" path="res://content/assets/texture/background/Letterbox.png" id="6_mudb7"]
 [ext_resource type="Shader" uid="uid://cedvid0d76g5y" path="res://content/assets/shaders/displacement.gdshader" id="7_mudb7"]
+[ext_resource type="PackedScene" uid="uid://dnen6trcdupt" path="res://content/essentials/final_score.tscn" id="7_n24t4"]
 [ext_resource type="Script" uid="uid://d0m1rovrp5cn6" path="res://content/script/desk.gd" id="9_clc0s"]
+[ext_resource type="Texture2D" uid="uid://ckxhhhxfjorvx" path="res://content/assets/texture/background/Background01.jpg" id="10_jgaql"]
 [ext_resource type="Texture2D" uid="uid://d6d5eurkvg2v" path="res://content/assets/texture/table.png" id="11_2dqf1"]
+[ext_resource type="AudioStream" uid="uid://bqost44qb1ymm" path="res://content/assets/sounds/SFX/walking-on-concrete-ver-2-268513.mp3" id="11_jgaql"]
 [ext_resource type="Texture2D" uid="uid://m00kggj4t4qi" path="res://content/assets/texture/folder.png" id="12_n24t4"]
+[ext_resource type="AudioStream" uid="uid://4u4yj7agdc1u" path="res://content/assets/sounds/BGM/In-game bgm/[no copyright music] _Breakfast_ lofi background music.mp3" id="16_42ery"]
+[ext_resource type="AudioStream" uid="uid://dx4udpnvosv5t" path="res://content/assets/sounds/BGM/Interview bgm/Covert Affair.mp3" id="17_cr47b"]
+[ext_resource type="AudioStream" uid="uid://bf1bl6hlv17jx" path="res://content/assets/sounds/SFX/clothesdrop(2nd closest I can find for push).mp3" id="19_318x4"]
+[ext_resource type="AudioStream" uid="uid://bkm6y7fbf2rxy" path="res://content/assets/sounds/SFX/room-with-buzz-incandescent-light-bulb-23892.mp3" id="19_cr47b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bxpk"]
 shader = ExtResource("2_7xg0s")
 shader_parameter/strength = 19.99999955296
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hd13g"]
+shader = ExtResource("7_mudb7")
+shader_parameter/interval = 0.8
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 1.0
+shader_parameter/intensityY = 1.0
+shader_parameter/seed = 42.0
+
+[sub_resource type="Animation" id="Animation_2dqf1"]
+resource_name = "ExitAnimation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-234, 405), Vector2(656, 405)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-234, 0, 0, 2.7979722, 1067.273, 656, -0.9353614, 9.86261, 0.7222128, -7.6151357),
+"times": PackedFloat32Array(0, 6)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.0666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_clc0s"]
 length = 0.001
@@ -42,6 +96,30 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(2),
 "points": PackedFloat32Array(-243, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sound:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_qi2v4"]
@@ -70,32 +148,29 @@ tracks/1/keys = {
 "points": PackedFloat32Array(-234, 0, 0, 2.7979722, 1067.273, 656, -0.9353614, 9.86261, 0.7222128, -7.6151357),
 "times": PackedFloat32Array(0, 6)
 }
-
-[sub_resource type="Animation" id="Animation_2dqf1"]
-resource_name = "ExitAnimation"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-234, 405), Vector2(656, 405)]
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sound:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_jgaql")]
 }
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-234, 0, 0, 2.7979722, 1067.273, 656, -0.9353614, 9.86261, 0.7222128, -7.6151357),
-"times": PackedFloat32Array(0, 6)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.2735524),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mudb7"]
@@ -104,14 +179,6 @@ _data = {
 &"RESET": SubResource("Animation_clc0s"),
 &"Walking Animation": SubResource("Animation_qi2v4")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hd13g"]
-shader = ExtResource("7_mudb7")
-shader_parameter/interval = 0.8
-shader_parameter/timeDelay = 0.0
-shader_parameter/intensityX = 1.0
-shader_parameter/intensityY = 1.0
-shader_parameter/seed = 42.0
 
 [sub_resource type="Animation" id="Animation_2w77h"]
 resource_name = "LetterboxCamein"
@@ -243,6 +310,54 @@ tracks/10/keys = {
 "points": PackedFloat32Array(197, -0.22821829, 68.325035, 0.82400954, -246.69574, 700, -1.1666667, 257.22687, 0, 0),
 "times": PackedFloat32Array(0.50932384, 2.2)
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Music:stream")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("16_42ery"), ExtResource("17_cr47b")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Music:volume_db")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1.05, 1.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-5.0, -80.0, -5.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Music:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PushSound:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.93333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_pda3r"]
 length = 0.001
@@ -373,6 +488,66 @@ tracks/10/keys = {
 "points": PackedFloat32Array(197, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Music:stream")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_42ery")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Music:volume_db")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Music:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PushSound:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Music:autoplay")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xc47r"]
 _data = {
@@ -406,26 +581,37 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
+[node name="Background" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hd13g")
+scale = Vector2(0.33359376, 0.3328704)
+texture = ExtResource("10_jgaql")
+centered = false
+
+[node name="Chair" type="Sprite2D" parent="."]
+position = Vector2(621, 401.25)
+scale = Vector2(0.28101853, 0.2951389)
+texture = ExtResource("3_t885a")
+
 [node name="InterviewPosition" type="Node2D" parent="."]
 position = Vector2(-243, 405)
 script = ExtResource("3_gpa0p")
 Interviewers_Array = Array[PackedScene]([ExtResource("4_7xg0s"), ExtResource("5_qi2v4"), ExtResource("6_clc0s")])
+FinalScore_Scene = ExtResource("7_n24t4")
 
 [node name="Timer" type="Timer" parent="InterviewPosition"]
 unique_name_in_owner = true
 one_shot = true
 autostart = true
 
+[node name="Sound" type="AudioStreamPlayer2D" parent="InterviewPosition"]
+position = Vector2(234, -405)
+volume_db = 10.0
+
 [node name="WalkAnim" type="AnimationPlayer" parent="InterviewPosition"]
 libraries = {
 &"": SubResource("AnimationLibrary_mudb7")
 }
 autoplay = "RESET"
-
-[node name="Background" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_hd13g")
-texture = ExtResource("4_qi2v4")
-centered = false
 
 [node name="CameraNode" type="Camera2D" parent="."]
 position = Vector2(640, 360)
@@ -465,6 +651,20 @@ speed_scale = 1.5
 [node name="Letterbox" type="Sprite2D" parent="CameraNode"]
 scale = Vector2(1.365, 1.68)
 texture = ExtResource("6_mudb7")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="CameraNode"]
+position = Vector2(-640, -360)
+stream = ExtResource("16_42ery")
+volume_db = 1.0
+
+[node name="PushSound" type="AudioStreamPlayer2D" parent="CameraNode"]
+stream = ExtResource("19_318x4")
+volume_db = 5.0
+pitch_scale = 0.5
+
+[node name="BackgroundNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_cr47b")
+autoplay = true
 
 [connection signal="timeout" from="InterviewPosition/Timer" to="InterviewPosition" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="InterviewPosition/WalkAnim" to="InterviewPosition" method="_on_walk_anim_animation_finished"]

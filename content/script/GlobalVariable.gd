@@ -1,6 +1,10 @@
 extends Node
 
 var Final_Score : int = 0
+#Bad Ending > 100
+#Normal Ending > 100 <= 299
+#Cool Ending == 300
+
 var Current_Score : int = 10
 var Current_Character : Character_Information_Resource = null
 

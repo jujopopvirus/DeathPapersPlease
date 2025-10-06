@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://s84xkw5p7voj" path="res://content/essentials/levels/Day01.tscn" id="2_3yebw"]
 [ext_resource type="PackedScene" uid="uid://clb3u0fj6vlqs" path="res://content/essentials/levels/Day02.tscn" id="3_ptgox"]
 [ext_resource type="Shader" uid="uid://4s00jn347qw7" path="res://content/assets/shaders/Transitionshader.gdshader" id="3_vendq"]
-[ext_resource type="PackedScene" uid="uid://kp7fx1jw30f" path="res://content/essentials/levels/Day03.tscn" id="4_xpwji"]
+[ext_resource type="PackedScene" uid="uid://bkx7yg65hjyx2" path="res://content/essentials/levels/Day03.tscn" id="4_xpwji"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7bxau"]
 shader = ExtResource("3_vendq")

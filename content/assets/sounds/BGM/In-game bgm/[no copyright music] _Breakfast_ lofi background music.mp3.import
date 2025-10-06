@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4u4yj7agdc1u"
+path="res://.godot/imported/[no copyright music] _Breakfast_ lofi background music.mp3-ea9b66f870052f6ee4cbddd6eda7a554.mp3str"
+
+[deps]
+
+source_file="res://content/assets/sounds/BGM/In-game bgm/[no copyright music] _Breakfast_ lofi background music.mp3"
+dest_files=["res://.godot/imported/[no copyright music] _Breakfast_ lofi background music.mp3-ea9b66f870052f6ee4cbddd6eda7a554.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

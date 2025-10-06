@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bhgxgtscni5uu"]
+[gd_scene load_steps=33 format=3 uid="uid://bhgxgtscni5uu"]
 
 [ext_resource type="Texture2D" uid="uid://q72tvp122wnd" path="res://content/assets/texture/white-paper-texture.jpg" id="1_2mthh"]
 [ext_resource type="Script" uid="uid://6u2yfj807ekw" path="res://content/script/matching/scan_document.gd" id="1_dj4ld"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cbtdeas2pep2o" path="res://content/assets/texture/stamps/buttons/CloseButton.png" id="14_eq7cw"]
 [ext_resource type="FontFile" uid="uid://da71sroogknkh" path="res://content/assets/font/apple/AppleGaramond-Italic.ttf" id="15_c016m"]
 [ext_resource type="Texture2D" uid="uid://be5n13b6to1o4" path="res://content/assets/texture/stamps/buttons/FinalizeButton.png" id="15_i3dy8"]
+[ext_resource type="AudioStream" uid="uid://bcbbxgqnmhrnj" path="res://content/assets/sounds/SFX/paper-245786.mp3" id="17_c016m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1pl7"]
 
@@ -239,10 +240,10 @@ unique_name_in_owner = true
 process_priority = 1
 z_index = 2
 layout_mode = 0
-offset_left = -47.0
-offset_top = -129.0
-offset_right = 213.0
-offset_bottom = 186.0
+offset_left = 185.0
+offset_top = -103.0
+offset_right = 445.0
+offset_bottom = 212.0
 theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
 theme_override_colors/font_hovered_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
 theme_override_colors/font_hovered_selected_color = Color(0.5176471, 0.81960785, 0.8509804, 1)
@@ -260,9 +261,9 @@ item_0/text = "Artist"
 item_1/text = "Camper"
 item_2/text = "Farmer"
 item_3/text = "Grandmother"
-item_4/text = "Mother"
-item_5/text = "Student"
-item_6/text = "Stuntman"
+item_4/text = "Mechanic"
+item_5/text = "Mother"
+item_6/text = "Student"
 item_7/text = "Teacher"
 item_8/text = "Unemployed"
 item_9/text = "Zookeeper"
@@ -321,6 +322,7 @@ text = "-----------"
 [node name="COD_ItemList" type="ItemList" parent="CanvasLayer/Paper/Paper/TextControl/CODText"]
 unique_name_in_owner = true
 process_priority = 1
+visible = false
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -328,10 +330,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -228.5
-offset_right = 126.0
-offset_bottom = 56.5
+offset_left = 98.0
+offset_top = -223.5
+offset_right = 358.0
+offset_bottom = 92.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.21960784, 0.18431373, 0.1882353, 1)
@@ -345,7 +347,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_dj4ld")
 theme_override_styles/hovered = SubResource("StyleBoxEmpty_t2uco")
 theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_q37jd")
 theme_override_styles/cursor = SubResource("StyleBoxEmpty_usaml")
-item_count = 9
+item_count = 10
 icon_mode = 0
 item_0/text = "Household Hazards"
 item_1/text = "Vehicle"
@@ -356,6 +358,7 @@ item_5/text = "Poisoned"
 item_6/text = "Wild Animals"
 item_7/text = "Electricity"
 item_8/text = "Natural Disaster"
+item_9/text = "Extreme Stunts"
 
 [node name="Title" type="Label" parent="CanvasLayer/Paper/Paper"]
 layout_mode = 1
@@ -638,6 +641,11 @@ text = "NO
 visible = false
 position = Vector2(1099, -408)
 texture = ExtResource("4_1igxf")
+
+[node name="Opensound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_c016m")
+volume_db = 10.0
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Paper/Paper/TextControl/OccupationText/OCCUPATION_ItemSelected" to="." method="_on_occupation_item_selected_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Paper/Paper/TextControl/OccupationText/OCCUPATION_ItemList" to="." method="_on_occupation_item_list_item_selected"]

@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://80f3rwb86t00"]
+
+[ext_resource type="Script" uid="uid://bx3lckcnee7xf" path="res://content/script/ending_script.gd" id="1_6nre2"]
+[ext_resource type="Texture2D" uid="uid://dbpqnfc53srf0" path="res://content/assets/texture/endings/normal_ending.png" id="2_ggaut"]
+[ext_resource type="Texture2D" uid="uid://bdqcfmhulmvg6" path="res://content/assets/texture/endings/bad_ending.png" id="2_lvjo1"]
+[ext_resource type="Texture2D" uid="uid://o8d3uxmqtaaa" path="res://content/assets/texture/endings/cool_ending.png" id="4_51bvj"]
+[ext_resource type="FontFile" uid="uid://oqqic3yplai3" path="res://content/assets/font/kastelvoire/KASTEL VOIRE OTF.otf" id="5_51bvj"]
+[ext_resource type="FontFile" uid="uid://bipnm33a28q40" path="res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf" id="5_ge1qu"]
+[ext_resource type="FontFile" uid="uid://cbaee1dai3fnr" path="res://content/assets/font/greatlake/GreatLakesNF.ttf" id="6_ynqb0"]
+
+[node name="Ending" type="Node2D"]
+script = ExtResource("1_6nre2")
+BAD_E = ExtResource("2_lvjo1")
+NORM_E = ExtResource("2_ggaut")
+COOL_E = ExtResource("4_51bvj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.050980393, 0.011764706, 0.015686275, 1)
+
+[node name="Score2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = 55.0
+offset_right = 214.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0.050980393, 0.011764706, 0.015686275, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_ynqb0")
+theme_override_font_sizes/font_size = 25
+text = "The"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="CanvasLayer/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = 104.0
+offset_right = 223.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0.050980393, 0.011764706, 0.015686275, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_ge1qu")
+theme_override_font_sizes/font_size = 72
+text = "NORMAL ENDING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ending" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+position = Vector2(652, 264)
+scale = Vector2(0.3435185, 0.3435185)
+texture = ExtResource("2_ggaut")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = 244.0
+offset_right = 171.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_51bvj")
+theme_override_font_sizes/font_size = 39
+text = "CONTINUE"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

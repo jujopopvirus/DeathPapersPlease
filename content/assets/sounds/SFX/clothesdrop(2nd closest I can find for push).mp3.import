@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bf1bl6hlv17jx"
+path="res://.godot/imported/clothesdrop(2nd closest I can find for push).mp3-8ee99787d574ae089b05780cadd0a7c9.mp3str"
+
+[deps]
+
+source_file="res://content/assets/sounds/SFX/clothesdrop(2nd closest I can find for push).mp3"
+dest_files=["res://.godot/imported/clothesdrop(2nd closest I can find for push).mp3-8ee99787d574ae089b05780cadd0a7c9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

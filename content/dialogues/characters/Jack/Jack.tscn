@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi0b77kc8cb6t"]
+
+[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="1_ikbno"]
+[ext_resource type="Texture2D" uid="uid://b2fyiwqk77kwy" path="res://content/assets/texture/chars/Day02/Farmer/01.png" id="2_hcjb6"]
+[ext_resource type="Texture2D" uid="uid://d2fur4ukgwbjb" path="res://content/assets/texture/chars/Day02/Farmer/ID.png" id="2_wmgar"]
+
+[node name="Jack" instance=ExtResource("1_ikbno")]
+Texture_Arrays = Array[Texture2D]([ExtResource("2_hcjb6")])
+
+[node name="Character_Information_Resource" parent="." index="3"]
+character_name = "Jack Gallagher"
+cause_of_death = "Poisoned"
+character_id = ExtResource("2_wmgar")
+occupation = "Farmer"
+final_verdict = "Heaven"
+Dialogue_Timeline = "Jack"
+HeavenTimeline = "Jack_Heaven"
+HellTimeline = "Jack_Hell"

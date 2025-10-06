@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://fa0db8i32ciy"]
+
+[ext_resource type="PackedScene" uid="uid://dlpkxeks47vvp" path="res://content/script/characterclasses/interviewee_placeholder.tscn" id="1_yu26s"]
+[ext_resource type="Texture2D" uid="uid://d2ctdrpoq7gjj" path="res://content/assets/texture/chars/Day02/IsekaiKid/ID.png" id="2_ed1j2"]
+[ext_resource type="Texture2D" uid="uid://p3p40waf5wuu" path="res://content/assets/texture/chars/Day02/IsekaiKid/1.png" id="2_ljbx3"]
+
+[node name="Ezekyle" instance=ExtResource("1_yu26s")]
+Texture_Arrays = Array[Texture2D]([ExtResource("2_ljbx3")])
+
+[node name="Character_Information_Resource" parent="." index="3"]
+character_name = "Ezekyle Numbadi"
+cause_of_death = "Household Hazards"
+character_id = ExtResource("2_ed1j2")
+occupation = "Unemployed"
+final_verdict = "Hell"
+Dialogue_Timeline = "Ezekyle"
+HeavenTimeline = "Ezekyle_Heaven"
+HellTimeline = "Ezekyle_Hell"

@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://clb3u0fj6vlqs"]
+[gd_scene load_steps=5 format=3 uid="uid://clb3u0fj6vlqs"]
 
 [ext_resource type="PackedScene" uid="uid://s84xkw5p7voj" path="res://content/essentials/levels/Day01.tscn" id="1_3umhw"]
+[ext_resource type="PackedScene" uid="uid://dmad10f4rxrkb" path="res://content/dialogues/characters/Jessica/jessica.tscn" id="2_fhsxe"]
+[ext_resource type="PackedScene" uid="uid://bi0b77kc8cb6t" path="res://content/dialogues/characters/Jack/Jack.tscn" id="3_j24sg"]
+[ext_resource type="PackedScene" uid="uid://fa0db8i32ciy" path="res://content/dialogues/characters/Ezekyle/Ezekyle.tscn" id="4_nupa4"]
 
 [node name="TestLevel" instance=ExtResource("1_3umhw")]
 
 [node name="InterviewPosition" parent="." index="1"]
-Interviewers_Array = Array[PackedScene]([])
+Interviewers_Array = Array[PackedScene]([ExtResource("2_fhsxe"), ExtResource("3_j24sg"), ExtResource("4_nupa4")])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnen6trcdupt"]
+[gd_scene load_steps=11 format=3 uid="uid://dnen6trcdupt"]
 
 [ext_resource type="Script" uid="uid://cyvo3fk3e54o0" path="res://content/script/final_score.gd" id="1_2wjir"]
 [ext_resource type="Shader" uid="uid://dycjorov44n00" path="res://content/assets/shaders/background_score.gdshader" id="1_rk3y5"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bipnm33a28q40" path="res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf" id="3_2wjir"]
 [ext_resource type="Texture2D" uid="uid://bv4f5ictu3ocb" path="res://content/assets/ColorPallette.png" id="4_piw04"]
 [ext_resource type="FontFile" uid="uid://oqqic3yplai3" path="res://content/assets/font/kastelvoire/KASTEL VOIRE OTF.otf" id="5_u5ale"]
+[ext_resource type="AudioStream" uid="uid://d4cq40r3yuxna" path="res://content/assets/sounds/SFX/concrete-hallway-with-air-conditioner-17139.mp3" id="7_piw04"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3d1d"]
 shader = ExtResource("1_rk3y5")
@@ -131,5 +132,10 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_u5ale")
 theme_override_font_sizes/font_size = 39
 text = "CONTINUE"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_piw04")
+volume_db = -2.0
+autoplay = true
 
 [connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
