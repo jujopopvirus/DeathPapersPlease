@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bhgxgtscni5uu"]
+[gd_scene load_steps=35 format=3 uid="uid://bhgxgtscni5uu"]
 
 [ext_resource type="Texture2D" uid="uid://q72tvp122wnd" path="res://content/assets/texture/white-paper-texture.jpg" id="1_2mthh"]
 [ext_resource type="Script" uid="uid://6u2yfj807ekw" path="res://content/script/matching/scan_document.gd" id="1_dj4ld"]
@@ -7,8 +7,10 @@
 [ext_resource type="FontFile" uid="uid://cgvldtgs25lwb" path="res://content/assets/font/apple/AppleGaramond.ttf" id="3_11lhs"]
 [ext_resource type="Texture2D" uid="uid://cp8x8i7awp5eq" path="res://content/assets/texture/stamps/HellStamp.png" id="3_eq7cw"]
 [ext_resource type="Texture2D" uid="uid://bv4f5ictu3ocb" path="res://content/assets/ColorPallette.png" id="4_1igxf"]
+[ext_resource type="AudioStream" uid="uid://b6iuy76ivl40o" path="res://content/assets/sounds/SFX/writing-263642.mp3" id="4_18rr5"]
 [ext_resource type="FontFile" uid="uid://cbaee1dai3fnr" path="res://content/assets/font/greatlake/GreatLakesNF.ttf" id="4_dj4ld"]
 [ext_resource type="FontFile" uid="uid://oqqic3yplai3" path="res://content/assets/font/kastelvoire/KASTEL VOIRE OTF.otf" id="5_t2uco"]
+[ext_resource type="AudioStream" uid="uid://dcqtwotmswb2b" path="res://content/assets/sounds/SFX/traditional-stamp-44189.mp3" id="5_wrqwg"]
 [ext_resource type="FontFile" uid="uid://bipnm33a28q40" path="res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf" id="6_q37jd"]
 [ext_resource type="Texture2D" uid="uid://bsw8ivuhhjbmg" path="res://content/assets/texture/stamps/TemplateStamp.png" id="7_usaml"]
 [ext_resource type="Texture2D" uid="uid://ci0xdwjtjctus" path="res://content/assets/texture/stamps/buttons/YesButton.png" id="10_w1pl7"]
@@ -99,6 +101,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
+
+[node name="Writing" type="AudioStreamPlayer2D" parent="CanvasLayer/Paper"]
+unique_name_in_owner = true
+stream = ExtResource("4_18rr5")
+volume_db = 5.0
+
+[node name="Stamp" type="AudioStreamPlayer2D" parent="CanvasLayer/Paper"]
+unique_name_in_owner = true
+stream = ExtResource("5_wrqwg")
 
 [node name="Paper" type="ColorRect" parent="CanvasLayer/Paper"]
 layout_mode = 1

@@ -8,7 +8,7 @@ label Choices
 - Can you show me your ID?
 	Glinda: I have my license with me! You know, in case the police come chasing me again HAHA!
 	[signal arg="ID_SHOW"]
-	[wait time="5.0"]
+	[wait_input]
 - What is your Occupation
 	Glinda: My occupation? I’m a mechanic!
 	Glinda: Now that I mentioned it, it’s kinda sad I gotta leave my babies behind.

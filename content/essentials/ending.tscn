@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://80f3rwb86t00"]
+[gd_scene load_steps=9 format=3 uid="uid://80f3rwb86t00"]
 
 [ext_resource type="Script" uid="uid://bx3lckcnee7xf" path="res://content/script/ending_script.gd" id="1_6nre2"]
 [ext_resource type="Texture2D" uid="uid://dbpqnfc53srf0" path="res://content/assets/texture/endings/normal_ending.png" id="2_ggaut"]
 [ext_resource type="Texture2D" uid="uid://bdqcfmhulmvg6" path="res://content/assets/texture/endings/bad_ending.png" id="2_lvjo1"]
 [ext_resource type="Texture2D" uid="uid://o8d3uxmqtaaa" path="res://content/assets/texture/endings/cool_ending.png" id="4_51bvj"]
 [ext_resource type="FontFile" uid="uid://oqqic3yplai3" path="res://content/assets/font/kastelvoire/KASTEL VOIRE OTF.otf" id="5_51bvj"]
+[ext_resource type="PackedScene" uid="uid://dxien6o1svhij" path="res://content/essentials/main_menu.tscn" id="5_bec0s"]
 [ext_resource type="FontFile" uid="uid://bipnm33a28q40" path="res://content/assets/font/kastelvoire/KASTEL VOIRE TTF.ttf" id="5_ge1qu"]
 [ext_resource type="FontFile" uid="uid://cbaee1dai3fnr" path="res://content/assets/font/greatlake/GreatLakesNF.ttf" id="6_ynqb0"]
 
@@ -13,6 +14,7 @@ script = ExtResource("1_6nre2")
 BAD_E = ExtResource("2_lvjo1")
 NORM_E = ExtResource("2_ggaut")
 COOL_E = ExtResource("4_51bvj")
+Main_Menu_Scene = ExtResource("5_bec0s")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

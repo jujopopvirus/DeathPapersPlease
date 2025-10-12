@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="DeathPapersPlease"
-run/main_scene="uid://yy1plsvcrj62"
+run/main_scene="uid://dxien6o1svhij"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/image="uid://8agir748g3e8"
 config/icon="uid://dmr6340p6l0s3"
 
 [autoload]
@@ -117,6 +118,9 @@ audio/channel_defaults={
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/borderless=true
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor]
 
@@ -125,6 +129,10 @@ script/search_in_file_extensions=PackedStringArray("gd", "gdshader", "dlg")
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Theatre/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/sticky_scribe/plugin.cfg")
+
+[gui]
+
+theme/custom_font="uid://cgvldtgs25lwb"
 
 [input]
 

@@ -7,7 +7,7 @@ label Choices
 - Can you show me your ID?
 	"Meet Loafer": I do carry my ID all the time, In case of what would happen to me.
 	[signal arg="ID_SHOW"]
-	[wait time="5.0"]
+	[wait_input]
 - What is your Occupation?
 	"Meet Loafer": I don’t know if this is considered an Occupation, but I am a camper. I travel around nature and sometimes take pictures of my journey.
 - What was the last thing you remember?

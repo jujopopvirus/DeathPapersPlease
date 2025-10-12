@@ -9,7 +9,7 @@ label Choices
 	"Ms Braid": You need my ID?
 	"Ms Braid": I have my business ID but I don't know what is the use of this in the afterlife…
 	[signal arg="ID_SHOW"]
-	[wait time="5.0"]
+	[wait_input]
 - What is your Occupation?
 	"Ms Braid": My occupation? I work as a veterinarian, it's a hassle to take care of the animals there in the vet.
 	"Ms Braid": Sometimes the owners do not take care of their pets, which leads to them being aggressive to people, so I’m the only veterinarian who has to deal with ferocious animals.

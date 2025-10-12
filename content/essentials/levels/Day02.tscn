@@ -7,5 +7,8 @@
 
 [node name="TestLevel" instance=ExtResource("1_3umhw")]
 
-[node name="InterviewPosition" parent="." index="1"]
+[node name="Title" parent="Effect/Day_Title" index="1"]
+text = "DAY 2"
+
+[node name="InterviewPosition" parent="." index="3"]
 Interviewers_Array = Array[PackedScene]([ExtResource("2_fhsxe"), ExtResource("3_j24sg"), ExtResource("4_nupa4")])

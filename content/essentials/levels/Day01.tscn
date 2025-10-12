@@ -1,9 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://s84xkw5p7voj"]
+[gd_scene load_steps=36 format=3 uid="uid://s84xkw5p7voj"]
 
 [ext_resource type="Script" uid="uid://p232fby3srsk" path="res://content/essentials/levels/test_level.gd" id="1_6u50l"]
 [ext_resource type="Shader" uid="uid://bmqvfjeiexaqr" path="res://content/assets/shaders/noise.gdshader" id="2_7xg0s"]
+[ext_resource type="FontFile" uid="uid://oqqic3yplai3" path="res://content/assets/font/kastelvoire/KASTEL VOIRE OTF.otf" id="3_frchd"]
 [ext_resource type="Script" uid="uid://v4oj42146toq" path="res://content/script/matching/interview_position.gd" id="3_gpa0p"]
 [ext_resource type="Texture2D" uid="uid://c8px28ndpetmy" path="res://content/assets/texture/background/Chair.png" id="3_t885a"]
+[ext_resource type="AudioStream" uid="uid://dhv4r4evr3atu" path="res://content/assets/sounds/SFX/cinematicboom.mp3" id="4_5fwaq"]
 [ext_resource type="PackedScene" uid="uid://k3fb5yfhkbxe" path="res://content/dialogues/characters/Ferdinand/Ferdinand.tscn" id="4_7xg0s"]
 [ext_resource type="Script" uid="uid://dbmux4ayes67o" path="res://content/script/cameraanimation.gd" id="5_clc0s"]
 [ext_resource type="PackedScene" uid="uid://b2qpw5hpor56e" path="res://content/dialogues/characters/Grey Telon/grey_telon.tscn" id="5_qi2v4"]
@@ -16,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://d6d5eurkvg2v" path="res://content/assets/texture/table.png" id="11_2dqf1"]
 [ext_resource type="AudioStream" uid="uid://bqost44qb1ymm" path="res://content/assets/sounds/SFX/walking-on-concrete-ver-2-268513.mp3" id="11_jgaql"]
 [ext_resource type="Texture2D" uid="uid://m00kggj4t4qi" path="res://content/assets/texture/folder.png" id="12_n24t4"]
+[ext_resource type="AudioStream" uid="uid://c60mcob6tvlr8" path="res://content/assets/sounds/SFX/opening-door-411632.mp3" id="13_frchd"]
 [ext_resource type="AudioStream" uid="uid://4u4yj7agdc1u" path="res://content/assets/sounds/BGM/In-game bgm/[no copyright music] _Breakfast_ lofi background music.mp3" id="16_42ery"]
 [ext_resource type="AudioStream" uid="uid://dx4udpnvosv5t" path="res://content/assets/sounds/BGM/Interview bgm/Covert Affair.mp3" id="17_cr47b"]
 [ext_resource type="AudioStream" uid="uid://bf1bl6hlv17jx" path="res://content/assets/sounds/SFX/clothesdrop(2nd closest I can find for push).mp3" id="19_318x4"]
@@ -24,6 +27,91 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bxpk"]
 shader = ExtResource("2_7xg0s")
 shader_parameter/strength = 19.99999955296
+
+[sub_resource type="Animation" id="Animation_2t12y"]
+resource_name = "Intro"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.9666667, 3, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.6862745), Color(0, 0, 0, 0.6862745), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.0333333, 4.1, 6.8333335, 7.9999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boom:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.066667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_frchd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.6862745)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boom:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fwaq"]
+_data = {
+&"Intro": SubResource("Animation_2t12y"),
+&"RESET": SubResource("Animation_frchd")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hd13g"]
 shader = ExtResource("7_mudb7")
@@ -67,6 +155,18 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(5.0666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Door:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -116,6 +216,18 @@ tracks/3/path = NodePath("Sound:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Door:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -171,6 +283,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Door:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mudb7"]
@@ -581,6 +705,54 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
+[node name="Day_Title" type="Control" parent="Effect"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Effect/Day_Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.6862745)
+
+[node name="Title" type="Label" parent="Effect/Day_Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -573.5
+offset_top = -279.0
+offset_right = 573.5
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_frchd")
+theme_override_font_sizes/font_size = 420
+text = "DAY 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IntroTitle" type="AnimationPlayer" parent="Effect/Day_Title"]
+libraries = {
+&"": SubResource("AnimationLibrary_5fwaq")
+}
+autoplay = "Intro"
+
+[node name="Boom" type="AudioStreamPlayer" parent="Effect/Day_Title"]
+stream = ExtResource("4_5fwaq")
+volume_db = -5.0
+
 [node name="Background" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_hd13g")
 scale = Vector2(0.33359376, 0.3328704)
@@ -603,9 +775,14 @@ unique_name_in_owner = true
 one_shot = true
 autostart = true
 
+[node name="Door" type="AudioStreamPlayer2D" parent="InterviewPosition"]
+position = Vector2(468, -810)
+stream = ExtResource("13_frchd")
+volume_db = -2.0
+
 [node name="Sound" type="AudioStreamPlayer2D" parent="InterviewPosition"]
 position = Vector2(234, -405)
-volume_db = 10.0
+volume_db = 15.0
 
 [node name="WalkAnim" type="AnimationPlayer" parent="InterviewPosition"]
 libraries = {

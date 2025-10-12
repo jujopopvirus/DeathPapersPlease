@@ -11,12 +11,13 @@ Ferdinand: Ah I see…. Well this place is more boring than I imagined….
 Ferdinand: Well atleast I can chat here with you then...
 [wait time="1.0"]
 label Choices
+[signal arg="emotion_01"]
 [signal arg="ID_HIDE"]
 - Can you show me your ID?
 	[signal arg="emotion_03"]
 	Ferdinand: My School ID? Why would you guys need a---  You know what, never mind….. Here.
 	[signal arg="ID_SHOW"]
-	[wait time="5.0"]
+	[wait_input]
 - What is your Occupation?
 	[signal arg="emotion_02"]
 	Ferdinand: Well I’m a highschool student in a shitty school system.

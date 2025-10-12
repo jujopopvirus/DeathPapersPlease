@@ -1,5 +1,4 @@
 [wait time="2.0"]
-( A door suddenly opnened)
 (A slender man just came over to the room, his skin was rotting though his eyes were uncannily normal. He sits down… and says nothing.)
 Charlie: Hi nice to meet you! So your name is… Jack?
 Jack: …
@@ -10,13 +9,13 @@ label Choices
 	Jack: ...
 	Jack take out his passport ID
 	[signal arg="ID_SHOW"]
-	[wait time="5.0"]
+	[wait_input]
 - What is your Occupation?
 	(Jack is showing a raking gesture, after that he did a motion that looks like he’s harvesting something.)
 - What was the last thing you remember?
 	(Jack was thinking... )
 	(He was gesturing something like a cylinder, maybe something got spilled over?)
-	(He was gesturing something like a cylinder, maybe something got spilled over?)
+	Then the last gesture he showed to me was an eating motion, then a cough at the end.
 - (End Conversation)
 	[end_timeline]
 jump Choices

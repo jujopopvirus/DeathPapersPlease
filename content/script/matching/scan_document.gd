@@ -14,6 +14,7 @@ func _on_occupation_item_selected_pressed() -> void:
 	occ_item_list.show()
 
 func _on_occupation_item_list_item_selected(index: int) -> void:
+	%Writing.play()
 	occupation = occ_item_list.get_item_text(index)
 	occ_button.text = occupation
 	occ_item_list.hide()
@@ -28,6 +29,7 @@ func _on_cod_item_selected_pressed() -> void:
 	cod_item_list.show()
 
 func _on_cod_item_list_item_selected(index: int) -> void:
+	%Writing.play()
 	cod = cod_item_list.get_item_text(index)
 	cod_button.text = cod
 	cod_item_list.hide()
@@ -50,6 +52,7 @@ func _on_decision_mouse_exited() -> void:
 
 func _on_heaven_button_pressed() -> void:
 	if occupation != "" and cod != "":
+		%Stamp.play()
 		finalstamp = "Heaven"
 		final_stamp.texture = Heaven_Stamp
 		if GlobalNode.Current_Character != null:
@@ -57,6 +60,7 @@ func _on_heaven_button_pressed() -> void:
 
 func _on_hell_button_pressed() -> void:
 	if occupation != "" and cod != "":
+		%Stamp.play()
 		finalstamp = "Hell"
 		final_stamp.texture = Hell_Stamp
 		if GlobalNode.Current_Character != null:
